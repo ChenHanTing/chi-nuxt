@@ -33,7 +33,8 @@ export default {
 
 .header .title {
   font-size: 3rem;
-  color: #526488;
+  /*color: #526488;*/
+  color: var(--first-color);
 }
 
 .header ul {

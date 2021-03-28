@@ -2,6 +2,9 @@ import pkg from './package'
 
 export default {
   mode: 'universal',
+  router: {
+    middleware: ['website']
+  },
 
   /*
   ** Headers of the page
@@ -27,6 +30,8 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/mixins/base.scss',
+    '~/assets/mixins/navbar.scss',
   ],
 
   /*
@@ -57,6 +62,6 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-    }
+    },
   }
 }

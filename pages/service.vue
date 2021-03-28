@@ -1,5 +1,5 @@
 <template lang="pug">
-  h1 About Page
+h1 About Service
 </template>
 
 <script>
@@ -9,6 +9,3 @@ export default {
   meta: { genre: siteType.chi },
 };
 </script>
-
-<style>
-</style>
