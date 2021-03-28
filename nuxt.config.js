@@ -38,6 +38,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '@/plugins/window-resize.js', mode: 'client' }
   ],
 
   /*
