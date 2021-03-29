@@ -45,7 +45,7 @@ export const schoolExhibition = [
     meta: { genre: siteType.school },
   },
   {
-    path: "/schools/about",
+    path: "/exhibitions/about",
     name: "十校連展-關於展覽",
     meta: { genre: siteType.school },
   },

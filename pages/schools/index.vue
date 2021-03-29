@@ -12,3 +12,7 @@ export default {
   components: { Sidebar }
 }
 </script>
+
+<style scoped lang="scss">
+@import "@/assets/mixins/school.scss";
+</style>

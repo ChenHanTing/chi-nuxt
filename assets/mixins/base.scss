@@ -31,7 +31,14 @@
   --brownish-grey: #666666;
   --white: #ffffff;
   --very-light-pink-two: #cccccc;
+  --very-light-pink-three: #dddddd;
   --gray-dark: #3e3a39;
+
+  /*= 10 school =*/
+  --ten-school-blue: #195B8D;
+  --ten-school-light-blue: #0E6F9A;
+  --ten-school-dark-blue: #1A4F83;
+  --ten-school-title-blue: #185A94;
 
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
@@ -167,4 +174,16 @@ img{
   left: 0;
   z-index: var(--z-fixed);
   background-color: var(--body-color);
+}
+
+.ten-school {
+  color: var(--ten-school-dark-blue) !important;
+}
+
+.ten-school:hover {
+  color: var(--ten-school-light-blue) !important;
+}
+
+.ten-school-hover:hover {
+  color: var(--ten-school-light-blue) !important;
 }

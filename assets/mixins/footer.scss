@@ -1,0 +1,78 @@
+/*========== FOOTER ==========*/
+
+/*= 讓 footer 黏在底部 =*/
+.chi-layout {
+  height: 100vh;
+}
+
+footer.footer {
+  background-color: var(--body-color);
+  border-top: 1px var(--very-light-pink-three) solid;
+  position: sticky;
+  top: 100%;
+}
+/*= 讓 footer 黏在底部 [END] =*/
+
+.footer__container{
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  row-gap: 2rem;
+}
+
+.footer__logo{
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.footer__description{
+  display: block;
+  margin: .25rem 0;
+  font-size: var(--small-font-size);
+  /* margin: .25rem 0 var(--mb-3); */
+}
+
+.footer__social{
+  font-size: 1.5rem;
+  color: var(--title-color);
+  margin-right: var(--mb-2);
+}
+
+.footer__title{
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  margin-bottom: var(--mb-2);
+  margin-top: 0;
+}
+
+.footer__link{
+  display: inline-block;
+  color: var(--text-color);
+  margin-bottom: var(--mb-1);
+}
+
+.footer__link:hover{
+  color: var(--first-color);
+}
+
+.footer__copy{
+  text-align: center;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  span { margin: 2px; }
+  margin-top: 3.5rem;
+}
+
+.sweat-nonstop {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  margin-left: 4px;
+}
+
+.y-shift {
+  transform: translateY(30px);
+}
+@media (max-width: 496px) {
+  .y-shift {
+    transform: translateY(-60px);
+  }
+}

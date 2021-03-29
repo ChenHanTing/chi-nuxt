@@ -1,6 +1,4 @@
 <template lang="pug">
-  div
-    h2 Welcome to the best corny dad jokes app on the web
 </template>
 
 <script>

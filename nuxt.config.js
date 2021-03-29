@@ -30,8 +30,7 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/mixins/base.scss',
-    '~/assets/mixins/navbar.scss',
+    '~/assets/mixins/base.scss'
   ],
 
   /*
