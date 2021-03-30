@@ -116,7 +116,7 @@ export default {
       &:hover {
         text-decoration: none;
         span {
-          color: var(--sepia);
+          color: var(--ten-school-light-blue);
         }
       }
     }

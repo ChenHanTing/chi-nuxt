@@ -7,18 +7,21 @@
           ul.nav__list
             li.nav__item(v-for="item in chiNavItem")
               router-link.nav__link(:to="item.path") {{ item.name }}
-            li
-              i.theme-button.bx.bx-moon.change-theme
+            // li
+            //   i.theme-button.bx.bx-moon.change-theme
         a.nav__logo.ten-school(v-if="isSchoolNav" href='#')
           div 台北市109學年度
           div 各級學校美術班聯合展覽
         .nav-menu.nav__menu(v-if="isSchoolNav" :class="showNav")
           ul.nav__list
             li.nav__item(v-for="item in schoolNavItem")
-              router-link.nav__link.ten-school(:to="item.path") {{ item.name }}
-            li
-              i.theme-button.bx.bx-moon.change-theme
-        .nav-toggle.nav__toggle.ten-school(@click="toggleNav")
+              router-link.nav__link(:to="item.path", :class="tenSchoolColor") {{ item.name }}
+            // li
+            //   i.theme-button.bx.bx-moon.change-theme
+        .nav-toggle.nav__toggle(
+          @click="toggleNav",
+          :class="tenSchoolColor"
+        )
           i.bx.bx-menu
     nuxt
     footer.footer.section.footer-container(v-if="isSchoolNav", :class="footerRightShift")
@@ -69,11 +72,25 @@ export default {
     }
   },
   methods: {
+    /* @click="toggleNav */
     toggleNav() {
       this.isShowNav = !this.isShowNav;
     },
+    /**
+     * @mouseover="mouseoverNav",
+     * @mouseleave="mouseleaveNav",
+     */
+    mouseoverNav(){
+      this.isShowNav = true
+    },
+    mouseleaveNav(){
+      this.isShowNav = false
+    }
   },
   computed: {
+    tenSchoolColor() {
+      return { "ten-school": this.isSchoolNav }
+    },
     footerRightShift () {
       const isShift = !includes(this.$route.name, ['exhibitions-about', 'exhibitions-about']);
 

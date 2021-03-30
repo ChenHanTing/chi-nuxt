@@ -7,8 +7,8 @@ export const list = [
   { key: 'blsh', name: '臺北市立百齡高級中學(國中部)', abbr: '百齡高中' },
   { key: 'jjhs', name: '臺北市立金華國民中學', abbr: '金華國中' },
   { key: 'zzsh', name: '臺北市立中正高級中學', abbr: '中正高中' },
-  { key: 'mlsh', name: '臺北市立明倫高級中學', abbr: '民族國小' },
-  { key: 'fhsh', name: '臺北市立復興高級中學', abbr: '民族國小' },
+  { key: 'mlsh', name: '臺北市立明倫高級中學', abbr: '明倫高中' },
+  { key: 'fhsh', name: '臺北市立復興高級中學', abbr: '復興高中' },
 ]
 
 export const detail = {
