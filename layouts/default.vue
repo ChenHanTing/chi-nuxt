@@ -60,7 +60,8 @@ export default {
     return {
       title: 'Payment Page - My awesome project', // Other meta information
       link: [
-        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css'} // 漢堡 icon
+        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css'}, // 漢堡 icon
+        { rel: "stylesheet", href: "https://pro.fontawesome.com/releases/v5.10.0/css/all.css" }
       ],
     }
   },

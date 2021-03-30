@@ -18,21 +18,11 @@ export const detail = {
     { id: 3, title: '作品名稱', content: '作者姓名' },
     { id: 4, title: '作品名稱', content: '作者姓名' },
     { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' }
+    { id: 6, title: '作品名稱', content: '作者姓名' },
+    { id: 7, title: '作品名稱', content: '作者姓名' },
+    { id: 8, title: '作品名稱', content: '作者姓名' },
+    { id: 9, title: '作品名稱', content: '作者姓名' },
+    { id: 10, title: '作品名稱', content: '作者姓名' }
   ],
   jaes: [
     { id: 1, title: '作品名稱', content: '作者姓名' },
@@ -40,11 +30,11 @@ export const detail = {
     { id: 3, title: '作品名稱', content: '作者姓名' },
     { id: 4, title: '作品名稱', content: '作者姓名' },
     { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' }
+    { id: 6, title: '作品名稱', content: '作者姓名' },
+    { id: 7, title: '作品名稱', content: '作者姓名' },
+    { id: 8, title: '作品名稱', content: '作者姓名' },
+    { id: 9, title: '作品名稱', content: '作者姓名' },
+    { id: 10, title: '作品名稱', content: '作者姓名' }
   ],
   tyes: [
     { id: 1, title: '作品名稱', content: '作者姓名' },
@@ -52,11 +42,11 @@ export const detail = {
     { id: 3, title: '作品名稱', content: '作者姓名' },
     { id: 4, title: '作品名稱', content: '作者姓名' },
     { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' }
+    { id: 6, title: '作品名稱', content: '作者姓名' },
+    { id: 7, title: '作品名稱', content: '作者姓名' },
+    { id: 8, title: '作品名稱', content: '作者姓名' },
+    { id: 9, title: '作品名稱', content: '作者姓名' },
+    { id: 10, title: '作品名稱', content: '作者姓名' }
   ],
   wjhs: [
     { id: 1, title: '作品名稱', content: '作者姓名' },
@@ -64,11 +54,11 @@ export const detail = {
     { id: 3, title: '作品名稱', content: '作者姓名' },
     { id: 4, title: '作品名稱', content: '作者姓名' },
     { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' }
+    { id: 6, title: '作品名稱', content: '作者姓名' },
+    { id: 7, title: '作品名稱', content: '作者姓名' },
+    { id: 8, title: '作品名稱', content: '作者姓名' },
+    { id: 9, title: '作品名稱', content: '作者姓名' },
+    { id: 10, title: '作品名稱', content: '作者姓名' }
   ],
   ktjg: [
     { id: 1, title: '作品名稱', content: '作者姓名' },
@@ -76,11 +66,11 @@ export const detail = {
     { id: 3, title: '作品名稱', content: '作者姓名' },
     { id: 4, title: '作品名稱', content: '作者姓名' },
     { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' }
+    { id: 6, title: '作品名稱', content: '作者姓名' },
+    { id: 7, title: '作品名稱', content: '作者姓名' },
+    { id: 8, title: '作品名稱', content: '作者姓名' },
+    { id: 9, title: '作品名稱', content: '作者姓名' },
+    { id: 10, title: '作品名稱', content: '作者姓名' }
   ],
   blsh: [
     { id: 1, title: '作品名稱', content: '作者姓名' },
@@ -88,11 +78,11 @@ export const detail = {
     { id: 3, title: '作品名稱', content: '作者姓名' },
     { id: 4, title: '作品名稱', content: '作者姓名' },
     { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' }
+    { id: 6, title: '作品名稱', content: '作者姓名' },
+    { id: 7, title: '作品名稱', content: '作者姓名' },
+    { id: 8, title: '作品名稱', content: '作者姓名' },
+    { id: 9, title: '作品名稱', content: '作者姓名' },
+    { id: 10, title: '作品名稱', content: '作者姓名' }
   ],
   jjhs: [
     { id: 1, title: '作品名稱', content: '作者姓名' },
@@ -100,11 +90,11 @@ export const detail = {
     { id: 3, title: '作品名稱', content: '作者姓名' },
     { id: 4, title: '作品名稱', content: '作者姓名' },
     { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' }
+    { id: 6, title: '作品名稱', content: '作者姓名' },
+    { id: 7, title: '作品名稱', content: '作者姓名' },
+    { id: 8, title: '作品名稱', content: '作者姓名' },
+    { id: 9, title: '作品名稱', content: '作者姓名' },
+    { id: 10, title: '作品名稱', content: '作者姓名' }
   ],
   zzsh: [
     { id: 1, title: '作品名稱', content: '作者姓名' },
@@ -112,11 +102,11 @@ export const detail = {
     { id: 3, title: '作品名稱', content: '作者姓名' },
     { id: 4, title: '作品名稱', content: '作者姓名' },
     { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' }
+    { id: 6, title: '作品名稱', content: '作者姓名' },
+    { id: 7, title: '作品名稱', content: '作者姓名' },
+    { id: 8, title: '作品名稱', content: '作者姓名' },
+    { id: 9, title: '作品名稱', content: '作者姓名' },
+    { id: 10, title: '作品名稱', content: '作者姓名' }
   ],
   mlsh: [
     { id: 1, title: '作品名稱', content: '作者姓名' },
@@ -124,11 +114,11 @@ export const detail = {
     { id: 3, title: '作品名稱', content: '作者姓名' },
     { id: 4, title: '作品名稱', content: '作者姓名' },
     { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' }
+    { id: 6, title: '作品名稱', content: '作者姓名' },
+    { id: 7, title: '作品名稱', content: '作者姓名' },
+    { id: 8, title: '作品名稱', content: '作者姓名' },
+    { id: 9, title: '作品名稱', content: '作者姓名' },
+    { id: 10, title: '作品名稱', content: '作者姓名' }
   ],
   fhsh: [
     { id: 1, title: '作品名稱', content: '作者姓名' },
@@ -136,10 +126,10 @@ export const detail = {
     { id: 3, title: '作品名稱', content: '作者姓名' },
     { id: 4, title: '作品名稱', content: '作者姓名' },
     { id: 5, title: '作品名稱', content: '作者姓名' },
-    { id: 1, title: '作品名稱', content: '作者姓名' },
-    { id: 2, title: '作品名稱', content: '作者姓名' },
-    { id: 3, title: '作品名稱', content: '作者姓名' },
-    { id: 4, title: '作品名稱', content: '作者姓名' },
-    { id: 5, title: '作品名稱', content: '作者姓名' }
+    { id: 6, title: '作品名稱', content: '作者姓名' },
+    { id: 7, title: '作品名稱', content: '作者姓名' },
+    { id: 8, title: '作品名稱', content: '作者姓名' },
+    { id: 9, title: '作品名稱', content: '作者姓名' },
+    { id: 10, title: '作品名稱', content: '作者姓名' }
   ]
 }

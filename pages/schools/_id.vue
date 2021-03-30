@@ -24,11 +24,6 @@ export default {
     }
   },
   created() {
-    console.log(this.$route.params.id);
-    console.log('school data:', schoolData);
-    console.log('school mces:', schoolData['mces']);
-    console.log('school current:', schoolData[this.$route.params.id]);
-    console.log('My school:', this.mySchool)
   },
   computed: {
     schoolName() {
