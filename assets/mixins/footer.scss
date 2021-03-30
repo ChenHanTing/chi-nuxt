@@ -7,10 +7,30 @@
 
 footer.footer {
   background-color: var(--body-color);
-  border-top: 1px var(--very-light-pink-three) solid;
+  /* border-top: 1px var(--very-light-pink-three) solid; */
   position: sticky;
+  z-index: -1;
   top: 100%;
+  padding-top: 300px;
 }
+
+
+@media screen and (min-width: 992px) {
+  footer.footer {
+  }
+  .footer-minus-sidebar {
+    width: calc(100% - 300px);
+    margin-left: auto;
+  }
+}
+
+
+.footer-container {
+  padding-left: var(--mb-3);
+  padding-right: var(--mb-3);
+}
+
+
 /*= 讓 footer 黏在底部 [END] =*/
 
 .footer__container{

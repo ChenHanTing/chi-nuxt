@@ -21,7 +21,7 @@
         .nav-toggle.nav__toggle.ten-school(@click="toggleNav")
           i.bx.bx-menu
     nuxt
-    footer.footer.section.bd-container(v-if="isSchoolNav")
+    footer.footer.section.footer-container(v-if="isSchoolNav", :class="footerRightShift")
       .footer__container.bd-grid
         .footer__content
           a.footer__logo.ten-school(href='#') 參與單位
@@ -48,7 +48,7 @@
 
 <script>
 import website from "@/mixins/website";
-import { map, equals, filter, slice } from 'ramda';
+import { map, equals, filter, slice, includes } from 'ramda';
 import { superNineNine, schoolExhibition } from '@/constant/website'
 import {list as schoolList} from "@/constant/schools/list";
 
@@ -74,6 +74,11 @@ export default {
     },
   },
   computed: {
+    footerRightShift () {
+      const isShift = !includes(this.$route.name, ['exhibitions-about', 'exhibitions-about']);
+
+      return { "footer-minus-sidebar": isShift }
+    },
     schools () {
       return map( el => ({ name: el.name, path: `/schools/${el.key}` }), schoolList)
     },

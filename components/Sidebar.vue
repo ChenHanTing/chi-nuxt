@@ -63,8 +63,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  $sidebar-width: 300px;
+
   .content {
     @media screen and (min-width: 992px) {
+      width: calc(100% - 300px);
       transform: translate3d(300px, 55px, 0);
     }
     @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -143,11 +146,8 @@ export default {
     margin: 0;
     padding: 0;
     /* 寬度訂工規較好設計 */
-    @media screen and (max-width: 991px) and (min-width: 768px) {
-      min-width: 270px;
-    }
     @media screen and (min-width: 992px) {
-      width: 300px;
+      width: $sidebar-width;
       position: fixed;
     }
     @media screen and (max-width: 991px) {
