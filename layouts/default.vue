@@ -10,8 +10,7 @@
             // li
             //   i.theme-button.bx.bx-moon.change-theme
         a.nav__logo.ten-school(v-if="isSchoolNav" href='#')
-          div 台北市109學年度
-          div 各級學校美術班聯合展覽
+          div 臺北市109學年度 各級學校美術班聯合展覽
         .nav-menu.nav__menu(v-if="isSchoolNav" :class="showNav")
           ul.nav__list
             li.nav__item(v-for="item in schoolNavItem")
@@ -43,10 +42,10 @@
           ul.y-shift
             li(v-for="item in schools_6to10")
               router-link.footer__link.ten-school-hover(:to="item.path") {{ item.name }}
-      p.footer__copy
-        span © 2021
-        a.sweat-nonstop(href="https://han-react.netlify.app/sweat-nonstop/index")
-          span 汗不停
+      // p.footer__copy
+      //   span © 2021
+      //   a.sweat-nonstop(href="https://han-react.netlify.app/sweat-nonstop/index")
+      //     span 汗不停
 </template>
 
 <script>
@@ -132,4 +131,8 @@ export default {
 <style>
 @import "@/assets/mixins/navbar.scss";
 @import "@/assets/mixins/footer.scss";
+
+.nav__logo.ten-school {
+  font-size: 1.4rem;
+}
 </style>

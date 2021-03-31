@@ -4,7 +4,7 @@ Sidebar
   .school-cards
     .card(v-for="(item, index) in mySchool")
       .image
-        img(:src="imagePath")
+        img(:src="imagePath(item, Math.floor(Math.random()*2))")
       .container
         h4 {{item.title}} {{item.id}}
         p {{item.content}}
@@ -29,15 +29,17 @@ export default {
     schoolName() {
       return find(propEq('key', this.$route.params.id))(list)?.name;
     },
-    imagePath() {
+  },
+  components: { Sidebar },
+  methods: {
+    imagePath(item, randomNum) {
       try {
-        return require(`@/assets/images/schools/${$route.params.id}/${item.id}.jpg`);
+        return require(`@/assets/images/schools/${this.$route.params.id}/${item.id}.jpg`);
       } catch(error) {
-        return require(`@/assets/images/schools/default.jpg`);
+        return require(`@/assets/images/schools/${randomNum}_default.jpg`);
       }
     }
-  },
-  components: { Sidebar }
+  }
 };
 </script>
 

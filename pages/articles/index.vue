@@ -65,16 +65,16 @@ export default {
 .next {
   font-size: 3rem;
   position: absolute;
-  top: 250px;
+  top: 50%;
 }
 
 .prev { left: 5% }
 .next { right: 5% }
 
 @media screen and (max-width: 991px) {
-  .prev, .next {top: 110%}
-  .prev {left: 45%}
-  .next {left: 55%}
+  .prev, .next {top: 100%}
+  .prev {left: 42%}
+  .next {left: 52%}
 }
 
 @media screen and (max-width: 576px) {
@@ -84,9 +84,9 @@ export default {
 
 .swipe-image {
   position: relative;
-  height: 500px;
+  height: 1000px;
   img {
-    max-width: 90%;
+    max-width: 80%;
     object-fit: contain;
   }
 }
