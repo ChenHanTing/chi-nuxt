@@ -56,7 +56,7 @@ export const schoolExhibition = [
     onNav: false
   },
   {
-    path: "/schools",
+    path: "/schools/mces",
     name: "十校連展-各校作品",
     meta: { genre: siteType.school },
   },

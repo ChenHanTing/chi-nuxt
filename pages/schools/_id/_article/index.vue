@@ -1,7 +1,7 @@
 <template lang="pug">
   Sidebar
     h1
-      span.article-title 我的秘密花園
+      span.article-title {{article.title}}
     .content-wrapper
       .swipe-image
         i.fas.fa-chevron-circle-left.prev(@click="minus")
@@ -19,30 +19,43 @@
 <script>
 import Sidebar from "@/components/Sidebar";
 import {siteType} from "@/constant/website";
-import {content} from "@/constant/schools/content";
 import {equals} from 'ramda';
+import {article as schoolData} from "@/constant/school";
 
 export default {
   meta: { genre: siteType.school },
   components: { Sidebar },
   data() {
     return {
-      article: content[0],
+      schoolArticle: schoolData[this.$route.params.id],
+      article: schoolData[this.$route.params.id][parseInt(this.$route.params.article)-1],
       position: 0,
+    }
+  },
+  computed: {
+    schoolArticleLength() {
+      return this.schoolArticle.length
     }
   },
   methods: {
     plus() {
-      this.position = (equals(this.position, this.article.picNum) ? 0 : this.position + 1);
+      const articleId = equals(parseInt(this.$route.params.article) + 1, this.schoolArticleLength) ? 1 : parseInt(this.$route.params.article) + 1
+
+      this.$router.push({ params: { id: this.$route.params.id, article: articleId } })
     },
     minus() {
-      this.position = (equals(this.position, 0) ? this.article.picNum - 1 : this.position - 1);
+      const articleId = equals(this.$route.params.article - 1, 0) ?
+                        this.schoolArticleLength - 1 :
+                        parseInt(this.$route.params.article) - 1
+
+      this.$router.push({ params: { id: this.$route.params.id, article: articleId } })
     },
-    imagePath(position) {
+    imagePath() {
       try {
-        return require(`@/assets/images/articles/${this.article.genre}/${position+1}.jpg`);
+        return require(`@/assets/images/articles/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.jpg`);
       } catch(error) {
-        return require(`@/assets/images/articles/default/${position+1}.jpg`);
+        console.log('Error:', error);
+        return require(`@/assets/images/articles/default/${this.$route.params.article}.jpg`);
       }
     }
   }
@@ -80,6 +93,10 @@ export default {
 @media screen and (max-width: 576px) {
   .prev { left: 44% }
   .next { left: 56% }
+  .prev,
+  .next {
+    font-size: 2rem;
+  }
 }
 
 .swipe-image {

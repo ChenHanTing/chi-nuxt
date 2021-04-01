@@ -18,7 +18,7 @@
 <script>
 import website from "@/mixins/website";
 import { map, splitEvery, last } from 'ramda';
-import { list as schoolList } from "@/constant/schools/list"
+import { school as schoolList } from "@/constant/school"
 
 const data = function () {
   return {

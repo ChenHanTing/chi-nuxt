@@ -52,7 +52,7 @@
 import website from "@/mixins/website";
 import { map, equals, filter, slice, includes } from 'ramda';
 import { superNineNine, schoolExhibition } from '@/constant/website'
-import {list as schoolList} from "@/constant/schools/list";
+import {school as schoolList} from "@/constant/school";
 
 export default {
   head () {
@@ -119,7 +119,6 @@ export default {
         ...map(
           el => ({ path: el.path, name: el.name.split('-')[1] }),
           filter( el => !equals(el.onNav, false), schoolExhibition)),
-        { path: '/', name: '返回首頁' }
       ]
     }
   },
