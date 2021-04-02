@@ -14,7 +14,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'og:title'  , property: 'og:title', content: '心之所向' },
+      { hid: 'description', name: 'description', content: pkg.description },
+      { hid: 'og:description', property: 'og:description', content: pkg.description },
+      // { hid: 'og:url', property: 'og:url', content: 'https://chenhanting.github.io/'},
+      // { hid: 'og:image' , property: 'og:image' , content: 'https://chenhanting.github.io/'},
+      { hid: 'og:type' , property: 'og:type' , content: 'website'},
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

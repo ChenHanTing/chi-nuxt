@@ -60,4 +60,14 @@ export const schoolExhibition = [
     name: "十校連展-各校作品",
     meta: { genre: siteType.school },
   },
+  {
+    path: "#",
+    name: "十校連展-展場介紹",
+    meta: { genre: siteType.school },
+  },
+  {
+    path: "#",
+    name: "十校連展-活動花絮",
+    meta: { genre: siteType.school },
+  },
 ]

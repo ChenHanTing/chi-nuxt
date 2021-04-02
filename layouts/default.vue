@@ -57,9 +57,16 @@ import {school as schoolList} from "@/constant/school";
 export default {
   head () {
     return {
-      title: 'Payment Page - My awesome project', // Other meta information
+      title: '心之所向', // Other meta information
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: '臺北市109學年度，各級學校美術班聯合展覽'
+        }
+      ],
       link: [
-        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css'}, // 漢堡 icon
+        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' }, // 漢堡 icon
         { rel: "stylesheet", href: "https://pro.fontawesome.com/releases/v5.10.0/css/all.css" }
       ],
     }
