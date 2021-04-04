@@ -61,12 +61,12 @@ export const schoolExhibition = [
     meta: { genre: siteType.school },
   },
   {
-    path: "#",
+    path: "/exhibitions/introduction",
     name: "十校連展-展場介紹",
     meta: { genre: siteType.school },
   },
   {
-    path: "#",
+    path: "/exhibitions/activity",
     name: "十校連展-活動花絮",
     meta: { genre: siteType.school },
   },

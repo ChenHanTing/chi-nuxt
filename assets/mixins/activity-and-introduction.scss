@@ -1,0 +1,54 @@
+.title {
+  display: flex;
+  justify-content: center;
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+  }
+
+  h1 {
+    text-align: center;
+    padding-bottom: 1px;
+    border-bottom: 4px var(--first-color) solid;
+  }
+}
+.content {
+  margin: 40px 40px 80px 40px;
+}
+
+.article {
+  margin-left: 20px;
+}
+
+/*=============== 展場照片 ===============*/
+
+$image-width: 300px;
+$image-height: 220px;
+
+.gallery {
+  display: grid;
+  grid-gap: 1rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax($image-width, 1fr));
+}
+
+figure {
+  border: thin #c0c0c0 solid;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: $image-width;
+  margin: auto;
+
+  img {
+    max-width: $image-width;
+    max-height: $image-height;
+  }
+
+  figcaption {
+    background-color: var(--text-color);
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+  }
+}
+/*=============== 展場照片 ===============*/

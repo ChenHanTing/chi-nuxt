@@ -21,7 +21,7 @@ export default {
   meta: { genre: siteType.school },
   data() {
     return {
-      mySchool: schoolData[this.$route.params.id]
+      mySchool: schoolData[this.$route.params.id],
     }
   },
   created() {
