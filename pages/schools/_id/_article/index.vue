@@ -6,7 +6,7 @@
       .swipe-image(@contextmenu.prevent="handler")
         i.fas.fa-chevron-circle-left.prev(@click="minus")
         i.fas.fa-chevron-circle-right.next(@click="plus")
-        img(:src="imagePath(position)")
+        img(:src="imagePath()")
       .info-wrapper
         .author {{article.author}}
         .method {{article.tool}}
@@ -24,7 +24,9 @@
       .modal(v-if='showModal')
         button.close(@click="closeModal()") x
         .videoWrapper
-          iframe(src='https://www.youtube.com/embed/BS6blX035NM' title='YouTube video player')
+          video.video(controls)
+            source(:src="videoPath()" type="video/mp4")
+
 </template>
 
 <script>
@@ -57,14 +59,14 @@ export default {
       this.showModal = false;
     },
     plus() {
-      const articleId = equals(parseInt(this.$route.params.article) + 1, this.schoolArticleLength) ? 1 : parseInt(this.$route.params.article) + 1
+      const articleId = equals(parseInt(this.$route.params.article), this.schoolArticleLength) ? 1 : parseInt(this.$route.params.article) + 1
 
       this.$router.push({ params: { id: this.$route.params.id, article: articleId } })
     },
     minus() {
-      const articleId = equals(this.$route.params.article - 1, 0) ?
-                        this.schoolArticleLength - 1 :
-                        parseInt(this.$route.params.article) - 1
+      const articleId = equals(parseInt(this.$route.params.article), 1) ?
+                        this.schoolArticleLength :
+                        parseInt(this.$route.params.article) -1
 
       this.$router.push({ params: { id: this.$route.params.id, article: articleId } })
     },
@@ -74,6 +76,14 @@ export default {
       } catch(error) {
         console.log('Error:', error);
         return require(`@/assets/images/articles/default/${this.$route.params.article}.jpg`);
+      }
+    },
+    videoPath() {
+      try {
+        return require(`@/assets/video/default.mp4`);
+      } catch(error) {
+        console.log('Error:', error);
+        return require(`@/assets/video/default.mp4`);
       }
     },
     handler(e) {
@@ -163,7 +173,7 @@ export default {
   display: block;
   /* overflow: hidden; */
 
-  iframe {
+  video.video {
     display: block;
     top: 30px;
     left: 0;

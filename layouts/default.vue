@@ -26,22 +26,25 @@
     footer.footer.section.footer-container(v-if="isSchoolNav", :class="footerRightShift")
       .footer__container.bd-grid
         .footer__content
-          a.footer__logo.ten-school(href='#') 參與單位
-          ul
-            li
-              .footer__link.ten-school-hover 主辦單位: 臺北市政府教育局
-            li
-              .footer__link.ten-school-hover 承辦單位: 臺北市復興高級中學
+          .footer-abc
+            a.footer__logo.ten-school(href='#') 參與單位
+            ul
+              li
+                .footer__link.ten-school-hover 主辦單位: 臺北市政府教育局
+              li
+                .footer__link.ten-school-hover 承辦單位: 臺北市復興高級中學
         .footer__content
-          a.footer__logo.ten-school(href='#') 協辦單位
-          ul
-            li(v-for="item in schools_0to5")
-              router-link.footer__link.ten-school-hover(:to="item.path") {{ item.name }}
+          .footer-abc
+            a.footer__logo.ten-school(href='#') 協辦單位
+            ul
+              li(v-for="item in schools_0to5")
+                router-link.footer__link.ten-school-hover(:to="item.path") {{ item.name }}
         .footer__content
-          a.footer__logo.ten-school(href='#')
-          ul.y-shift
-            li(v-for="item in schools_6to10")
-              router-link.footer__link.ten-school-hover(:to="item.path") {{ item.name }}
+          .footer-abc
+            a.footer__logo.ten-school(href='#')
+            ul.y-shift
+              li(v-for="item in schools_6to10")
+                router-link.footer__link.ten-school-hover(:to="item.path") {{ item.name }}
       // p.footer__copy
       //   span © 2021
       //   a.sweat-nonstop(href="https://han-react.netlify.app/sweat-nonstop/index")
@@ -99,7 +102,8 @@ export default {
       return { "ten-school": this.isSchoolNav }
     },
     footerRightShift () {
-      const isShift = !includes(this.$route.name, ['exhibitions-about', 'exhibitions-about']);
+      console.log('What is:', this.$route.name);
+      const isShift = !includes(this.$route.name, ['exhibitions', 'exhibitions-about']);
 
       return { "footer-minus-sidebar": isShift }
     },

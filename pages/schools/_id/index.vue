@@ -84,14 +84,18 @@ export default {
     }
     .container {
       height: 80px;
-
+      padding-left: 14px;
+      padding-right: 14px;
       font-size: 16px;
       text-align: center;
       letter-spacing: 0.122em;
       h4 {
         color: #3e3a39;
-        line-height: 0.1;
+        line-height: 1rem;
         font-weight: 500;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
       p {
         color: #3e3a39;

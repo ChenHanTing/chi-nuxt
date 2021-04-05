@@ -8,10 +8,28 @@
 footer.footer {
   background-color: var(--body-color);
   /* border-top: 1px var(--very-light-pink-three) solid; */
+  padding-top: 300px;
   position: sticky;
   z-index: -1;
   top: 100%;
-  padding-top: 300px;
+}
+
+/*=== 偏左到置中 ===*/
+.footer__content {
+  display: grid;
+}
+
+/*=== 偏左到置中 ===*/
+@media screen and (min-width: 768px) {
+  .footer__content {
+    place-items: baseline center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer__content {
+    justify-content: space-between
+  }
 }
 
 
