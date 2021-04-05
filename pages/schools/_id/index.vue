@@ -2,7 +2,7 @@
 Sidebar
   h1 {{ schoolName }}
   .school-cards
-    .card(v-for="(item, index) in mySchool")
+    .card(v-for="(item, index) in mySchool" @contextmenu.prevent="handler")
       NuxtLink(:to="`/schools/${$route.params.id}/${index+1}`")
         .image
           img(:src="imagePath(item)")
@@ -55,6 +55,9 @@ export default {
           return require(`@/assets/images/schools/${Math.floor(Math.random()*2)}_default.jpg`);
         }
       }
+    },
+    handler(e) {
+      e.preventDefault();
     }
   }
 };

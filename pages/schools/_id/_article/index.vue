@@ -3,7 +3,7 @@
     h1
       span.article-title {{article.title}}
     .content-wrapper
-      .swipe-image
+      .swipe-image(@contextmenu.prevent="handler")
         i.fas.fa-chevron-circle-left.prev(@click="minus")
         i.fas.fa-chevron-circle-right.next(@click="plus")
         img(:src="imagePath(position)")
@@ -75,6 +75,9 @@ export default {
         console.log('Error:', error);
         return require(`@/assets/images/articles/default/${this.$route.params.article}.jpg`);
       }
+    },
+    handler(e) {
+      e.preventDefault();
     }
   }
 }

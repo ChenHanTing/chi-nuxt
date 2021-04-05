@@ -27,7 +27,7 @@ export const superNineNine = [
     meta: { genre: siteType.chi },
   },
   {
-    path: "/achievement",
+    path: "/achievements",
     name: "履約實績",
     meta: { genre: siteType.chi },
   },

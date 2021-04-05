@@ -5,7 +5,7 @@
         a.nav__logo(v-if="isChiNav" href='#') LOGO
         .nav-menu.nav__menu(v-if="isChiNav" :class="showNav")
           ul.nav__list
-            li.nav__item(v-for="item in chiNavItem")
+            li.nav__item(v-for="item in chiNavItem" @click="closeNav")
               router-link.nav__link(:to="item.path") {{ item.name }}
             // li
             //   i.theme-button.bx.bx-moon.change-theme
@@ -13,7 +13,7 @@
           div 臺北市109學年度 各級學校美術班聯合展覽
         .nav-menu.nav__menu(v-if="isSchoolNav" :class="showNav")
           ul.nav__list
-            li.nav__item(v-for="item in schoolNavItem")
+            li.nav__item(v-for="item in schoolNavItem" @click="closeNav")
               router-link.nav__link(:to="item.path", :class="tenSchoolColor") {{ item.name }}
             // li
             //   i.theme-button.bx.bx-moon.change-theme
@@ -87,10 +87,10 @@ export default {
      * @mouseover="mouseoverNav",
      * @mouseleave="mouseleaveNav",
      */
-    mouseoverNav(){
+    openNav(){
       this.isShowNav = true
     },
-    mouseleaveNav(){
+    closeNav(){
       this.isShowNav = false
     }
   },
