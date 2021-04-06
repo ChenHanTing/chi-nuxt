@@ -19,7 +19,6 @@ footer.footer {
   display: grid;
 }
 
-/*=== 偏左到置中 ===*/
 @media screen and (min-width: 768px) {
   .footer__content {
     place-items: baseline center;
@@ -31,6 +30,7 @@ footer.footer {
     justify-content: space-between
   }
 }
+/*=== 偏左到置中 ===*/
 
 
 @media screen and (min-width: 992px) {
