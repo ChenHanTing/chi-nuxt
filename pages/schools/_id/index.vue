@@ -5,7 +5,7 @@ Sidebar
     .card(v-for="(item, index) in mySchool" @contextmenu.prevent="handler")
       NuxtLink(:to="`/schools/${$route.params.id}/${index+1}`")
         .image
-          img(:src="imagePath(item)")
+          img(:src="imagePath(index+1)")
         .container
           h4 {{item.title}}
           p {{item.author}}
@@ -38,17 +38,17 @@ export default {
      * https://forum.freecodecamp.org/t/problem-with-image-path-generated-from-function-in-react/249420
      */
     imagePath(item) {
-      const forwardLink = `@/assets/images/schools/${this.$route.params.id}/${item.id.toString().padStart(2, '0')}-2`
+      const forwardLink = `@/assets/images/schools/${this.$route.params.id}/${item.toString().padStart(2, '0')}-2`
       const fallbackLink = `@/assets/images/schools/${Math.floor(Math.random()*2)}_default.jpg`
 
       try {
         console.log('What is the link(1):', `${forwardLink}.jpg`);
-        return require(`@/assets/images/schools/${this.$route.params.id}/${item.id.toString().padStart(2, '0')}-2.jpg`);
+        return require(`@/assets/images/schools/${this.$route.params.id}/${item.toString().padStart(2, '0')}-2.jpg`);
       } catch(e) {
         console.log('First layer error: ', e);
         try {
           console.log('What is the link(2):', `${forwardLink}.tif`);
-          return require(`@/assets/images/schools/${this.$route.params.id}/${item.id.toString().padStart(2, '0')}-2.tif`);
+          return require(`@/assets/images/schools/${this.$route.params.id}/${item.toString().padStart(2, '0')}-2.tif`);
         } catch(err) {
           console.log('Second layer error: ', err);
           console.log('What is the link(3):', fallbackLink);

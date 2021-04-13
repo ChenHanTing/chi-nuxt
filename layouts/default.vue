@@ -1,6 +1,6 @@
 <template lang="pug">
   .chi-layout
-    header#header.l-header.scroll-header
+    header#header.l-header.scroll-header(:class="tenSchoolBG")
       nav.nav.bd-container
         a.nav__logo(v-if="isChiNav" href='#') LOGO
         .nav-menu.nav__menu(v-if="isChiNav" :class="showNav")
@@ -101,6 +101,9 @@ export default {
     tenSchoolColor() {
       return { "ten-school": this.isSchoolNav }
     },
+    tenSchoolBG() {
+      return { "ten-school-bg": this.isSchoolNav }
+    },
     footerRightShift () {
       console.log('What is:', this.$route.name);
       const isShift = !includes(this.$route.name, ['exhibitions', 'exhibitions-about']);
@@ -144,5 +147,28 @@ export default {
 
 .nav__logo.ten-school {
   font-size: 1.4rem;
+}
+
+.ten-school-bg {
+  background: url('@/assets/images/schools/bg-02.jpg');
+  background-repeat: repeat;
+}
+
+a.nav__logo.ten-school {
+  color: var(--body-color);
+}
+
+i.bx.bx-menu {
+  color: var(--body-color);
+}
+
+@media screen and (min-width: 768px) {
+  .ten-school {
+    color: var(--body-color);
+  }
+
+  .ten-school:hover {
+    color: var(--ten-school-pink) !important;
+  }
 }
 </style>

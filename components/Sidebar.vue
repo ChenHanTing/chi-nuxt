@@ -144,7 +144,9 @@ export default {
     left: 0;
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding-left: 10px;
+    background: url('@/assets/images/schools/bg-01.jpg');
+
     /* 寬度訂工規較好設計 */
     @media screen and (min-width: 992px) {
       width: $sidebar-width;
@@ -154,28 +156,44 @@ export default {
       display: none;
     }
 
-    box-shadow: 0 4px 4px rgba(0,0,0,.1);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
 
     ul {
       /* default pl: 40px */
       padding-left: 0;
       padding-top: 60px;
-      list-style: none;
       text-decoration: none;
 
       a {
         height: 100%;
         width: 100%;
-        line-height: 30px;
+        line-height: 40px;
         font-size: 16px;
         display: block;
         text-align: left;
         margin-left: 18px;
-        color: var(--text-color);
-        font-weight: var(--font-medium);
+        font-size: 1.13rem;
+        color: var(--body-color);
+        font-weight: var(--font-semi-bold);
         text-decoration: none;
         box-sizing: border-box;
         border-top: 1px solid rgba(255, 255, 255, .1);
+
+        &:hover {
+          color: var(--ten-school-pink);
+          font-weight: 800;
+        }
+
+        &:before {
+          content: '▶';
+          color: transparent;
+          position: absolute;
+          left: 4px;
+        }
+
+        &:hover:before {
+          color: var(--ten-school-pink);
+        }
       }
     }
   }

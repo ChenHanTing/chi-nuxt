@@ -39,6 +39,21 @@ export default {
 .content-bottom {
   margin: 40px 60px;
 }
+
+@media screen and (min-width: 768px) {
+  .content,
+  p.content-bottom {
+    margin: 40px 120px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .content,
+  p.content-bottom {
+    margin: 40px 200px;
+  }
+}
+
 .last-content {
   margin-bottom: 80px;
 }

@@ -14,7 +14,7 @@
         .article
           .title-and-video
             .title 作品說明
-            .image(@click="openModal()")
+            .image(@click="openModal()" v-if="showVideoIcon")
               img(:src="require('@/assets/images/camera.png')")
           hr.border
           .desc {{article.description}}
@@ -35,6 +35,18 @@ import {siteType} from "@/constant/website";
 import {equals} from 'ramda';
 import {article as schoolData} from "@/constant/school";
 
+function doesFileExist(urlToFile) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('HEAD', urlToFile, false);
+  xhr.send();
+
+  if (xhr.status == "404") {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 export default {
   meta: { genre: siteType.school },
   components: { Sidebar },
@@ -49,7 +61,13 @@ export default {
   computed: {
     schoolArticleLength() {
       return this.schoolArticle.length
-    }
+    },
+    showVideoIcon() {
+      const path_01 = `@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`
+      const path_02 = `@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`
+
+      return doesFileExist(path_01) || doesFileExist(path_02);
+    },
   },
   methods: {
     openModal() {
@@ -80,10 +98,15 @@ export default {
     },
     videoPath() {
       try {
-        return require(`@/assets/video/default.mp4`);
+        return require(`@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`);
       } catch(error) {
-        console.log('Error:', error);
-        return require(`@/assets/video/default.mp4`);
+        try {
+          console.log('Error:', error);
+          return require(`@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`);
+        } catch(error2) {
+          console.log('Error:', error2);
+          this.showVideoIcon = false;
+        }
       }
     },
     handler(e) {
@@ -109,7 +132,7 @@ export default {
 
 .modal-vue .modal {
   position: fixed;
-  top: 150vh;
+  top: 120vh;
   left: 20%;
   width: 80%;
   max-width: 600px;
