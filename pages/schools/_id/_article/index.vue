@@ -25,7 +25,7 @@
         button.close(@click="closeModal()") x
         .videoWrapper
           video.video(controls)
-            source(:src="videoPath()" type="video/mp4")
+            source(:src="videoPath()" type="video/mp4" alt="找不到影片")
 
 </template>
 
@@ -34,18 +34,6 @@ import Sidebar from "@/components/Sidebar";
 import {siteType} from "@/constant/website";
 import {equals} from 'ramda';
 import {article as schoolData} from "@/constant/school";
-
-function doesFileExist(urlToFile) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('HEAD', urlToFile, false);
-  xhr.send();
-
-  if (xhr.status == "404") {
-    return false;
-  } else {
-    return true;
-  }
-}
 
 export default {
   meta: { genre: siteType.school },
@@ -63,10 +51,15 @@ export default {
       return this.schoolArticle.length
     },
     showVideoIcon() {
-      const path_01 = `@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`
-      const path_02 = `@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`
-
-      return doesFileExist(path_01) || doesFileExist(path_02);
+      try {
+        return !!require(`@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`);
+      } catch {
+        try {
+          return !!require(`@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`);
+        } catch {
+          return false
+        }
+      }
     },
   },
   methods: {
@@ -90,6 +83,7 @@ export default {
     },
     imagePath() {
       try {
+        console.log(`@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`);
         return require(`@/assets/images/articles/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.jpg`);
       } catch(error) {
         console.log('Error:', error);
@@ -105,7 +99,6 @@ export default {
           return require(`@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`);
         } catch(error2) {
           console.log('Error:', error2);
-          this.showVideoIcon = false;
         }
       }
     },
