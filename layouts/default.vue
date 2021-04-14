@@ -7,21 +7,17 @@
           ul.nav__list
             li.nav__item(v-for="item in chiNavItem" @click="closeNav")
               router-link.nav__link(:to="item.path") {{ item.name }}
-            // li
-            //   i.theme-button.bx.bx-moon.change-theme
-        a.nav__logo.ten-school(v-if="isSchoolNav" href='#')
+        a.nav__logo.ten-school(v-if="isSchoolNav" href='#' :class="articleNav")
           div 臺北市109學年度 各級學校美術班聯合展覽
         .nav-menu.nav__menu(v-if="isSchoolNav" :class="showNav")
           ul.nav__list
             li.nav__item(v-for="item in schoolNavItem" @click="closeNav")
-              router-link.nav__link(:to="item.path", :class="tenSchoolColor") {{ item.name }}
-            // li
-            //   i.theme-button.bx.bx-moon.change-theme
+              router-link.nav__link(:to="item.path", :class="tenSchoolNavItemColor") {{ item.name }}
         .nav-toggle.nav__toggle(
           @click="toggleNav",
-          :class="tenSchoolColor"
+          :class="tenSchoolNavItemColor"
         )
-          i.bx.bx-menu
+          i.bx.bx-menu(:class="articleNav")
     nuxt
     footer.footer.section.footer-container(v-if="isSchoolNav", :class="footerRightShift")
       .footer__container.bd-grid
@@ -45,17 +41,13 @@
             ul.y-shift
               li(v-for="item in schools_6to10")
                 router-link.footer__link.ten-school-hover(:to="item.path") {{ item.name }}
-      // p.footer__copy
-      //   span © 2021
-      //   a.sweat-nonstop(href="https://han-react.netlify.app/sweat-nonstop/index")
-      //     span 汗不停
 </template>
 
 <script>
 import website from "@/mixins/website";
 import { map, equals, filter, slice, includes } from 'ramda';
 import { superNineNine, schoolExhibition } from '@/constant/website'
-import {school as schoolList} from "@/constant/school";
+import { school as schoolList, fullFooterPage } from "@/constant/school";
 
 export default {
   head () {
@@ -95,18 +87,23 @@ export default {
     },
     closeNav(){
       this.isShowNav = false
-    }
+    },
   },
   computed: {
-    tenSchoolColor() {
-      return { "ten-school": this.isSchoolNav }
+    articlePage() {
+      return this.isSchoolNav && !includes(this.$route.name, fullFooterPage);
+    },
+    articleNav() {
+      return { "article-nav": this.articlePage }
+    },
+    tenSchoolNavItemColor() {
+      return { "ten-school": this.isSchoolNav, "article-nav-item": this.articlePage }
     },
     tenSchoolBG() {
-      return { "ten-school-bg": this.isSchoolNav }
+      return { "ten-school-bg": this.articlePage }
     },
     footerRightShift () {
-      console.log('What is:', this.$route.name);
-      const isShift = !includes(this.$route.name, ['exhibitions', 'exhibitions-about']);
+      const isShift = !includes(this.$route.name, fullFooterPage);
 
       return { "footer-minus-sidebar": isShift }
     },
@@ -139,8 +136,6 @@ export default {
 }
 </script>
 
-
-
 <style>
 @import "@/assets/mixins/navbar.scss";
 @import "@/assets/mixins/footer.scss";
@@ -155,20 +150,44 @@ export default {
 }
 
 a.nav__logo.ten-school {
-  color: var(--body-color);
+  color: var(--ten-school-dark-blue);
 }
 
 i.bx.bx-menu {
+  color: var(--ten-school-dark-blue);
+}
+
+.ten-school {
+  color: var(--ten-school-dark-blue);
+}
+
+.ten-school:hover {
+  color: var(--ten-school-dark-blue);
+}
+
+
+/* article-nav: 增加權重 */
+.article-nav.article-nav.article-nav {
   color: var(--body-color);
 }
+.article-nav.article-nav:hover {
+  color: var(--ten-school-pink);
+}
 
+/* article-nav: 增加權重 */
 @media screen and (min-width: 768px) {
-  .ten-school {
+  .article-nav-item.article-nav-item.article-nav-item {
     color: var(--body-color);
   }
-
-  .ten-school:hover {
-    color: var(--ten-school-pink) !important;
+  .article-nav-item.article-nav-item:hover {
+    color: var(--ten-school-pink);
   }
 }
+
+@media screen and (max-width: 767px) {
+  .article-nav-item.article-nav-item:hover {
+    color: var(--ten-school-dark-blue);
+  }
+}
+
 </style>

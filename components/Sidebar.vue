@@ -4,7 +4,7 @@
     .sidebar
       ul
         li(v-for="item in schools")
-          router-link(:to="item.path") {{ item.name }}
+          router-link(:to="item.path" :class="selected(item.id)") {{ item.name }}
     .tab-mobile
       table.mobile-tabs-wrapper
         tr(v-for="i in formatMobileTab")
@@ -17,7 +17,7 @@
 
 <script>
 import website from "@/mixins/website";
-import { map, splitEvery, last } from 'ramda';
+import { map, splitEvery, last, equals } from 'ramda';
 import { school as schoolList } from "@/constant/school"
 
 const data = function () {
@@ -37,6 +37,9 @@ const methods = {
         return givenData;
     }
   },
+  selected(id) {
+    return { selected: equals(this.$route.params.id, id) }
+  }
 };
 
 export default {
@@ -46,12 +49,12 @@ export default {
   data,
   computed: {
     schools () {
-      return map( el => ({ name: el.name, path: `/schools/${el.key}` }), schoolList)
+      return map( el => ({ name: el.name, path: `/schools/${el.key}`, id: el.key }), schoolList)
     },
     abbrSchools () {
       return map( el => ({ abbr: el.abbr, path: `/schools/${el.key}` }), schoolList)
     },
-    formatMobileTab() {
+    formatMobileTab () {
       const formattedData = splitEvery(3, this.abbrSchools);
       const lastData = last(formattedData);
       const formattedLastData = this.formatDataWithDummy(lastData);
@@ -145,7 +148,8 @@ export default {
     height: 100%;
     margin: 0;
     padding-left: 10px;
-    background: url('@/assets/images/schools/bg-01.jpg');
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 1%,
+      rgba(255,255,255,1)), url('@/assets/images/schools/bg-01.jpg');
 
     /* 寬度訂工規較好設計 */
     @media screen and (min-width: 992px) {
@@ -164,6 +168,17 @@ export default {
       padding-top: 60px;
       text-decoration: none;
 
+      a.selected {
+        color: var(--ten-school-pink);
+
+        &:before {
+          content: '▶';
+          color: var(--ten-school-pink);
+          position: absolute;
+          left: 4px;
+        }
+      }
+
       a {
         height: 100%;
         width: 100%;
@@ -179,20 +194,12 @@ export default {
         box-sizing: border-box;
         border-top: 1px solid rgba(255, 255, 255, .1);
 
-        &:hover {
-          color: var(--ten-school-pink);
-          font-weight: 800;
-        }
-
-        &:before {
-          content: '▶';
-          color: transparent;
-          position: absolute;
-          left: 4px;
-        }
+        //&:hover {
+        //  color: var(--ten-school-pink);
+        //  font-weight: 800;
+        //}
 
         &:hover:before {
-          color: var(--ten-school-pink);
         }
       }
     }

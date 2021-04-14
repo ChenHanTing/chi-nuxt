@@ -10,7 +10,7 @@
       .info-wrapper
         .author {{article.author}}
         .method {{article.tool}}
-        .teacher {{article.teacher}}老師 指導
+        .teacher {{article.teacher}}{{teacherSuffix(article.teacher)}}
         .article
           .title-and-video
             .title 作品說明
@@ -25,14 +25,14 @@
         button.close(@click="closeModal()") x
         .videoWrapper
           video.video(controls)
-            source(:src="videoPath()" type="video/mp4" alt="找不到影片")
+            source(:src="videoPath()" type="video/mp4")
 
 </template>
 
 <script>
 import Sidebar from "@/components/Sidebar";
 import {siteType} from "@/constant/website";
-import {equals} from 'ramda';
+import {equals, isNil} from 'ramda';
 import {article as schoolData} from "@/constant/school";
 
 export default {
@@ -60,7 +60,7 @@ export default {
           return false
         }
       }
-    },
+    }
   },
   methods: {
     openModal() {
@@ -104,6 +104,9 @@ export default {
     },
     handler(e) {
       e.preventDefault();
+    },
+    teacherSuffix(teacher) {
+      return (teacher.length === 0) ? null : '老師 指導'
     }
   }
 }
