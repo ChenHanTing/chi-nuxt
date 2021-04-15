@@ -52,6 +52,10 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/redirect-module'
+  ],
+  redirect: [
+    { from: '^/achievement/109y_10school.html', to: '/exhibitions' }
   ],
   /*
   ** Axios module configuration
