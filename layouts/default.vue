@@ -93,11 +93,18 @@ export default {
     articlePage() {
       return this.isSchoolNav && !includes(this.$route.name, fullFooterPage);
     },
+    is109y() {
+      return includes(this.$route.name, ['achievement-109y_10school'])
+    },
     articleNav() {
       return { "article-nav": this.articlePage }
     },
     tenSchoolNavItemColor() {
-      return { "ten-school": this.isSchoolNav, "article-nav-item": this.articlePage }
+      return {
+        "ten-school": this.isSchoolNav,
+        "article-nav-item": this.articlePage,
+        "page-109y": this.is109y
+      }
     },
     tenSchoolBG() {
       return { "ten-school-bg": this.articlePage }
@@ -136,7 +143,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @import "@/assets/mixins/navbar.scss";
 @import "@/assets/mixins/footer.scss";
 
@@ -190,4 +197,9 @@ i.bx.bx-menu {
   }
 }
 
+.page-109y {
+  i.bx.bx-menu {
+    color: transparent;
+  }
+}
 </style>

@@ -1,6 +1,6 @@
 <template lang="pug">
 main
-  img.full-width(src="~@/assets/images/schools/banner.jpg")
+  img.full-width(src="~@/assets/images/banner-new.jpg")
 </template>
 
 <script>

@@ -22,7 +22,12 @@ export default {
       { hid: 'og:type' , property: 'og:type' , content: 'website'},
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'
+      }
     ]
   },
 
@@ -52,7 +57,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/redirect-module'
+    'nuxt-fontawesome',
   ],
   redirect: [
     { from: '^/achievement/109y_10school.html', to: '/exhibitions' }

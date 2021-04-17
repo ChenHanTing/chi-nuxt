@@ -50,7 +50,7 @@ export default {
 @media screen and (min-width: 1280px) {
   .content,
   p.content-bottom {
-    margin: 40px 300px;
+    margin: 40px 20%;
   }
 }
 
