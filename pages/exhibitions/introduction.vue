@@ -4,11 +4,23 @@
     .title
       h1 展場介紹
     .article
-      h1 範例標題
+      h1 高中作品
     .gallery
-      figure(v-for="item in gallery")
+      figure(v-for="item in senior")
         img(:src="item.image" alt="預設文字")
-        figcaption {{item.description}}
+        //- figcaption {{item.description}}
+    .article
+      h1 國中作品
+    .gallery
+      figure(v-for="item in junior")
+        img(:src="item.image" alt="預設文字")
+        //- figcaption {{item.description}}
+    .article
+      h1 國小作品
+    .gallery
+      figure(v-for="item in elementory")
+        img(:src="item.image" alt="預設文字")
+        //- figcaption {{item.description}}
 </template>
 
 <script>
@@ -18,7 +30,9 @@ export default {
   meta: { genre: siteType.school },
   data() {
     return {
-      gallery: Array(30).fill({image: 'http://placeimg.com/640/360/any', description: '展場圖片'})
+      senior: [...Array(10).keys()].map(n => ({ image: require(`@/assets/images/exhibition/senior/J${n+1}.JPG`), description: '展場圖片' })),
+      junior: [...Array(9).keys()].map(n => ({ image: require(`@/assets/images/exhibition/junior/H${n+1}.JPG`), description: '展場圖片' })),
+      elementory: [...Array(5).keys()].map(n => ({ image: require(`@/assets/images/exhibition/elementary/E${n+1}.JPG`), description: '展場圖片' }))
     }
   }
 };
@@ -27,4 +41,13 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/mixins/full-image.scss";
 @import "@/assets/mixins/activity-and-introduction.scss";
+
+.article,
+.gallery {
+  margin: 0 10%;
+}
+
+.article {
+  padding-left: 2%;
+}
 </style>

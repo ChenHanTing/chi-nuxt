@@ -3,12 +3,10 @@
     img.full-width(src="~@/assets/images/schools/partial-banner.jpg")
     .title
       h1 活動花絮
-    .article
-      h1 範例標題
     .gallery
       figure(v-for="item in gallery")
         img(:src="item.image" alt="預設文字")
-        figcaption {{item.description}}
+        //- figcaption {{item.description}}
 </template>
 
 <script>
@@ -18,7 +16,7 @@ export default {
   meta: { genre: siteType.school },
   data() {
     return {
-      gallery: Array(30).fill({image: 'http://placeimg.com/640/360/any', description: '展場圖片'})
+      gallery: [...Array(34).keys()].map(n => ({ image: require(`@/assets/images/activity/O${n+1}.JPG`), description: '展場圖片' }))
     }
   }
 };
