@@ -30,9 +30,9 @@ export default {
   meta: { genre: siteType.school },
   data() {
     return {
-      senior: [...Array(10).keys()].map(n => ({ image: require(`@/assets/images/exhibition/senior/J${n+1}.JPG`), description: '展場圖片' })),
-      junior: [...Array(9).keys()].map(n => ({ image: require(`@/assets/images/exhibition/junior/H${n+1}.JPG`), description: '展場圖片' })),
-      elementory: [...Array(5).keys()].map(n => ({ image: require(`@/assets/images/exhibition/elementary/E${n+1}.JPG`), description: '展場圖片' }))
+      senior: [...Array(12).keys()].map(n => ({ image: require(`@/assets/images/exhibition/senior/H${n+1}.JPG`), description: '展場圖片' })),
+      junior: [...Array(12).keys()].map(n => ({ image: require(`@/assets/images/exhibition/junior/J${n+1}.JPG`), description: '展場圖片' })),
+      elementory: [...Array(12).keys()].map(n => ({ image: require(`@/assets/images/exhibition/elementary/E${n+1}.JPG`), description: '展場圖片' }))
     }
   }
 };

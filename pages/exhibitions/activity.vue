@@ -16,7 +16,10 @@ export default {
   meta: { genre: siteType.school },
   data() {
     return {
-      gallery: [...Array(34).keys()].map(n => ({ image: require(`@/assets/images/activity/O${n+1}.JPG`), description: '展場圖片' }))
+      gallery: [
+        ...[...Array(34).keys()].map(n => ({ image: require(`@/assets/images/activity/O${n+1}.JPG`), description: '展場圖片' })),
+        ...[...Array(19).keys()].map(n => ({ image: require(`@/assets/images/activity/L${n+1}.jpg`), description: '展場圖片' }))
+      ]
     }
   }
 };
