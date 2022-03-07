@@ -8,7 +8,7 @@
             li.nav__item(v-for="item in chiNavItem" @click="closeNav")
               router-link.nav__link(:to="item.path") {{ item.name }}
         a.nav__logo.ten-school(v-if="isSchoolNav" href='#' :class="articleNav")
-          div {{title}}
+          div {{getTitle}}
         .nav-menu.nav__menu(v-if="isSchoolNav" :class="showNav")
           ul.nav__list
             li.nav__item(v-for="item in schoolNavItem" @click="closeNav")
@@ -70,8 +70,7 @@ export default {
   name: "navbar",
   data() {
     return {
-      isShowNav: false,
-      title: `臺北市 ${this.$route.query.y ?? 109} 學年度，各級學校美術班聯合展覽`
+      isShowNav: false
     }
   },
   methods: {
@@ -139,7 +138,17 @@ export default {
           el => ({ path: el.path, name: el.name.split('-')[1] }),
           filter( el => !equals(el.onNav, false), schoolExhibition)),
       ]
+    },
+    getTitle() {
+      if(this.$route.name === "achievement-110y_10school") {
+        return `臺北市 110 學年度，各級學校美術班聯合展覽`
+      } else if (this.$route.name === "achievement-109y_10school") {
+        return `臺北市 109 學年度，各級學校美術班聯合展覽`
+      }
     }
+  },
+  created() {
+    console.log("this.$route.name:", this.$route.name)
   },
 }
 </script>

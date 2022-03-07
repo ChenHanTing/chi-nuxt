@@ -5,6 +5,9 @@
 <script>
 export default {
   name: "none.vue",
+  created() {
+    console.log("this.$route:", this.$route)
+  },
   head () {
     return {
       title: '心之所向', // Other meta information

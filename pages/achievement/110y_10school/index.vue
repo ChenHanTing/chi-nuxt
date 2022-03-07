@@ -13,10 +13,12 @@ export default {
   // layout: 'default',
   meta: { genre: siteType.school },
   created() {
+    console.log("What is imageBase:", this.imageBase)
+    console.log("What is image:", this.image)
   },
   computed: {
     image() {
-      return `${host}/109/banner.jpg`
+      return `${host}/110/banner.jpg`
     }
   }
 }

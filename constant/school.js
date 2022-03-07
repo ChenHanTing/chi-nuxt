@@ -11,7 +11,7 @@ export const school = [
   { key: 'fhsh', name: '臺北市立復興高級中學', abbr: '復興高中' },
 ]
 
-export const fullFooterPage = ['exhibitions', 'exhibitions-about', 'exhibitions-introduction', 'exhibitions-activity', 'achievement-109y_10school']
+export const fullFooterPage = ['exhibitions', 'exhibitions-about', 'exhibitions-introduction', 'exhibitions-activity', 'achievement-109y_10school', 'achievement-110y_10school']
 
 export const article = {
   mces: [
