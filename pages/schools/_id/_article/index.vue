@@ -54,10 +54,10 @@ export default {
     },
     showVideoIcon() {
       try {
-        return !!require(`@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`);
+        return !!`${this.imageBase}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`;
       } catch {
         try {
-          return !!require(`@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`);
+          return !!`${this.imageBase}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`;
         } catch {
           return false
         }

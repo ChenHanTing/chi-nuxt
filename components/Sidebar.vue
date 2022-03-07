@@ -149,7 +149,7 @@ export default {
     margin: 0;
     padding-left: 10px;
     background: linear-gradient(to bottom, rgba(255,255,255,0) 1%,
-      rgba(255,255,255,1)), url('@/assets/images/schools/bg-01.jpg');
+      rgba(255,255,255,1)), url('http://super-ninenine.synology.me/schools/bg-01.jpg');
 
     /* 寬度訂工規較好設計 */
     @media screen and (min-width: 992px) {

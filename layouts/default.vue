@@ -153,7 +153,7 @@ export default {
 }
 
 .ten-school-bg {
-  background: url('@/assets/images/schools/bg-02.jpg');
+  background: url('http://super-ninenine.synology.me/schools/bg-02.jpg');
   background-repeat: repeat;
 }
 
