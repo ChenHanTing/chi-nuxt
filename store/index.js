@@ -1,5 +1,5 @@
 export const state = () => ({
-  genre: 'chi'
+  genre: 'chi',
 })
 
 export const mutations = {
@@ -9,5 +9,5 @@ export const mutations = {
 }
 
 export const getters = {
-  getWebsite: state => state.genre,
+  getWebsite: state => state.genre
 };

@@ -48,7 +48,7 @@ export default {
   */
   plugins: [
     { src: '@/plugins/window-resize.js', mode: 'client' },
-    { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
+    { src: '@/plugins/vue-awesome-swiper', mode: 'client' }
   ],
 
   /*

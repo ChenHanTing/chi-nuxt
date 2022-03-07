@@ -8,7 +8,7 @@
             li.nav__item(v-for="item in chiNavItem" @click="closeNav")
               router-link.nav__link(:to="item.path") {{ item.name }}
         a.nav__logo.ten-school(v-if="isSchoolNav" href='#' :class="articleNav")
-          div 臺北市109學年度 各級學校美術班聯合展覽
+          div {{title}}
         .nav-menu.nav__menu(v-if="isSchoolNav" :class="showNav")
           ul.nav__list
             li.nav__item(v-for="item in schoolNavItem" @click="closeNav")
@@ -46,7 +46,7 @@
 <script>
 import website from "@/mixins/website";
 import { map, equals, filter, slice, includes } from 'ramda';
-import { superNineNine, schoolExhibition } from '@/constant/website'
+import {superNineNine, schoolExhibition, host, currentYear} from '@/constant/website'
 import { school as schoolList, fullFooterPage } from "@/constant/school";
 
 export default {
@@ -57,7 +57,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: '臺北市109學年度，各級學校美術班聯合展覽'
+          content: `臺北市 ${this.$route.query.y ?? 109} 學年度，各級學校美術班聯合展覽`
         }
       ],
       link: [
@@ -70,7 +70,8 @@ export default {
   name: "navbar",
   data() {
     return {
-      isShowNav: false
+      isShowNav: false,
+      title: `臺北市 ${this.$route.query.y ?? 109} 學年度，各級學校美術班聯合展覽`
     }
   },
   methods: {
@@ -121,7 +122,7 @@ export default {
       return slice(0,5, this.schools)
     },
     schools_6to10 () {
-      return slice(6,10, this.schools)
+      return slice(5,10, this.schools)
     },
     showNav() {
       return {'show-menu': this.isShowNav}

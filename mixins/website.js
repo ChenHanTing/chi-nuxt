@@ -1,5 +1,5 @@
 import { equals } from "ramda";
-import { siteType } from "@/constant/website";
+import {host, siteType} from "@/constant/website";
 import { mapGetters } from 'vuex';
 
 const computed = {
@@ -15,5 +15,10 @@ const computed = {
 }
 
 export default {
-  computed
+  computed,
+  data() {
+    return {
+      imageBase: `${host}/${this.$route.query.y ?? 109}`
+    }
+  }
 }

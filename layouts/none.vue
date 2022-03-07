@@ -12,7 +12,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: '臺北市109學年度，各級學校美術班聯合展覽'
+          content: `臺北市 ${this.$route.query.y ?? 109} 學年度 各級學校美術班聯合展覽`
         }
       ],
       link: [

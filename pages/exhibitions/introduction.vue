@@ -1,38 +1,40 @@
 <template lang="pug">
   main
-    img.full-width(src="~@/assets/images/schools/partial-banner.jpg")
+    img.full-width(:src="`${imageBase}/partial-banner.jpg`")
     .title
       h1 展場介紹
     .article
       h1 高中作品
     .gallery
       figure(v-for="item in senior")
-        img(:src="item.image" alt="預設文字")
+        img(:src="`${imageBase}/${item.image}`" alt="預設文字")
         //- figcaption {{item.description}}
     .article
       h1 國中作品
     .gallery
       figure(v-for="item in junior")
-        img(:src="item.image" alt="預設文字")
+        img(:src="`${imageBase}/${item.image}`" alt="預設文字")
         //- figcaption {{item.description}}
     .article
       h1 國小作品
     .gallery
       figure(v-for="item in elementory")
-        img(:src="item.image" alt="預設文字")
+        img(:src="`${imageBase}/${item.image}`" alt="預設文字")
         //- figcaption {{item.description}}
 </template>
 
 <script>
 import {siteType} from "@/constant/website";
+import website from "@/mixins/website";
 
 export default {
+  mixins: [website],
   meta: { genre: siteType.school },
   data() {
     return {
-      senior: [...Array(12).keys()].map(n => ({ image: require(`@/assets/images/exhibition/senior/H${n+1}.JPG`), description: '展場圖片' })),
-      junior: [...Array(12).keys()].map(n => ({ image: require(`@/assets/images/exhibition/junior/J${n+1}.JPG`), description: '展場圖片' })),
-      elementory: [...Array(12).keys()].map(n => ({ image: require(`@/assets/images/exhibition/elementary/E${n+1}.JPG`), description: '展場圖片' }))
+      senior: [...Array(12).keys()].map(n => ({ image: `exhibition/senior/H${n+1}.JPG`, description: '展場圖片' })),
+      junior: [...Array(12).keys()].map(n => ({ image: `exhibition/junior/J${n+1}.JPG`, description: '展場圖片' })),
+      elementory: [...Array(12).keys()].map(n => ({ image: `exhibition/elementary/E${n+1}.JPG`, description: '展場圖片' }))
     }
   }
 };

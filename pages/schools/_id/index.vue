@@ -16,9 +16,11 @@ import { find, propEq } from 'ramda';
 import {article as schoolData, school} from '@/constant/school';
 import Sidebar from "@/components/Sidebar";
 import {siteType} from "@/constant/website";
+import website from "@/mixins/website";
 
 export default {
   meta: { genre: siteType.school },
+  mixins: [website],
   data() {
     return {
       mySchool: schoolData[this.$route.params.id],
@@ -38,21 +40,13 @@ export default {
      * https://forum.freecodecamp.org/t/problem-with-image-path-generated-from-function-in-react/249420
      */
     imagePath(item) {
-      const forwardLink = `@/assets/images/schools/${this.$route.params.id}/${item.toString().padStart(2, '0')}-2`
-      const fallbackLink = `@/assets/images/schools/${Math.floor(Math.random()*2)}_default.jpg`
-
       try {
-        console.log('What is the link(1):', `${forwardLink}.jpg`);
-        return require(`@/assets/images/schools/${this.$route.params.id}/${item.toString().padStart(2, '0')}-2.jpg`);
+        return `${this.imageBase}/schools/${this.$route.params.id}/${item.toString().padStart(2, '0')}-2.jpg`;
       } catch(e) {
-        console.log('First layer error: ', e);
         try {
-          console.log('What is the link(2):', `${forwardLink}.tif`);
-          return require(`@/assets/images/schools/${this.$route.params.id}/${item.toString().padStart(2, '0')}-2.tif`);
+          return `${this.imageBase}/schools/${this.$route.params.id}/${item.toString().padStart(2, '0')}-2.tif`;
         } catch(err) {
-          console.log('Second layer error: ', err);
-          console.log('What is the link(3):', fallbackLink);
-          return require(`@/assets/images/schools/${Math.floor(Math.random()*2)}_default.jpg`);
+          return `${this.imageBase}/schools/${Math.floor(Math.random()*2)}_default.jpg`;
         }
       }
     },

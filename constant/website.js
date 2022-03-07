@@ -1,5 +1,9 @@
+export const host = "http://super-ninenine.synology.me"
+export const currentYear = new Date().getFullYear() - 1911 - 1
+
 export const siteType = {
-  chi: 'chi', school: 'school'
+  chi: 'chi',
+  school: 'school'
 }
 
 /**

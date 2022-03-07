@@ -15,7 +15,7 @@
           .title-and-video
             .title 作品說明
             .image(@click="openModal()" v-if="showVideoIcon")
-              img(:src="require('@/assets/images/camera.png')")
+              img(:src="`${this.imageBase}/camera.png`")
           hr.border
           .desc {{article.description}}
 
@@ -32,12 +32,14 @@
 <script>
 import Sidebar from "@/components/Sidebar";
 import {siteType} from "@/constant/website";
-import {equals, isNil} from 'ramda';
+import {equals} from 'ramda';
 import {article as schoolData} from "@/constant/school";
+import website from "@/mixins/website";
 
 export default {
   meta: { genre: siteType.school },
   components: { Sidebar },
+  mixins: [website],
   data() {
     return {
       schoolArticle: schoolData[this.$route.params.id],
@@ -83,22 +85,18 @@ export default {
     },
     imagePath() {
       try {
-        console.log(`@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`);
-        return require(`@/assets/images/articles/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.jpg`);
+        return `${this.imageBase}/articles/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.jpg`;
       } catch(error) {
-        console.log('Error:', error);
-        return require(`@/assets/images/articles/default/${this.$route.params.article}.jpg`);
+        return `${this.imageBase}/articles/default/${this.$route.params.article}.jpg`;
       }
     },
     videoPath() {
       try {
-        return require(`@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`);
+        return `${this.imageBase}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`;
       } catch(error) {
         try {
-          console.log('Error:', error);
-          return require(`@/assets/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`);
+          return `${this.imageBase}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`;
         } catch(error2) {
-          console.log('Error:', error2);
         }
       }
     },

@@ -1,6 +1,6 @@
 <template lang="pug">
 main
-  img.full-width(src="~@/assets/images/schools/partial-banner.jpg")
+  img.full-width(:src="`${imageBase}/partial-banner.jpg`")
   .title
     h1 關於展覽
   p.content 藝術是一座城市的文明指標，臺北市多元的藝文活動是城市美學的具體實踐，也為市民提供更美好的生活品質。
@@ -13,8 +13,10 @@ main
 
 <script>
 import {siteType} from "@/constant/website";
+import website from "@/mixins/website";
 
 export default {
+  mixins: [website],
   meta: { genre: siteType.school },
 };
 </script>

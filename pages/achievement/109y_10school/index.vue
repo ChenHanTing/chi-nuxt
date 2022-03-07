@@ -1,6 +1,6 @@
 <template lang="pug">
 main
-  img.full-width(src="~@/assets/images/banner-new.jpg")
+  img.full-width(:src="image")
   .home-page-container
     router-link.home-page-btn(type="button" to="/schools/mces")
       span 進入線上藝廊
@@ -8,13 +8,21 @@ main
 
 <script>
 import {siteType} from "@/constant/website";
+import website from "@/mixins/website";
 
 export default {
   // layout: 'default',
   meta: { genre: siteType.school },
   created() {
-    // console.log(this.$route)
+    console.log("What is imageBase:", this.imageBase)
+    console.log("What is image:", this.image)
   },
+  mixins: [website],
+  computed: {
+    image() {
+      return `${this.imageBase}/banner.jpg`
+    }
+  }
 }
 </script>
 
