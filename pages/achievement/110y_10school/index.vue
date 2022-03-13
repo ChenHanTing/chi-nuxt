@@ -12,10 +12,7 @@ import {siteType, host} from "@/constant/website";
 export default {
   // layout: 'default',
   meta: { genre: siteType.school },
-  created() {
-    console.log("What is imageBase:", this.imageBase)
-    console.log("What is image:", this.image)
-  },
+  created() {},
   computed: {
     image() {
       return `${host}/110/banner.jpg`

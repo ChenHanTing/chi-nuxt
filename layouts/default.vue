@@ -45,33 +45,46 @@
 
 <script>
 import website from "@/mixins/website";
-import { map, equals, filter, slice, includes } from 'ramda';
-import {superNineNine, schoolExhibition, host, currentYear} from '@/constant/website'
+import { map, equals, filter, slice, includes } from "ramda";
+import {
+  superNineNine,
+  schoolExhibition,
+  host,
+  currentYear
+} from "@/constant/website";
 import { school as schoolList, fullFooterPage } from "@/constant/school";
 
 export default {
-  head () {
+  head() {
     return {
-      title: '心之所向', // Other meta information
+      title: "心之所向", // Other meta information
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: `臺北市 ${this.$route.query.y ?? 109} 學年度，各級學校美術班聯合展覽`
+          hid: "description",
+          name: "description",
+          content: `臺北市 ${this.$route.query.y ??
+            109} 學年度 各級學校美術班聯合展覽`
         }
       ],
       link: [
-        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' }, // 漢堡 icon
-        { rel: "stylesheet", href: "https://pro.fontawesome.com/releases/v5.10.0/css/all.css" }
-      ],
-    }
+        {
+          rel: "stylesheet",
+          href:
+            "https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+        }, // 漢堡 icon
+        {
+          rel: "stylesheet",
+          href: "https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        }
+      ]
+    };
   },
   mixins: [website],
   name: "navbar",
   data() {
     return {
       isShowNav: false
-    }
+    };
   },
   methods: {
     /* @click="toggleNav */
@@ -82,75 +95,79 @@ export default {
      * @mouseover="mouseoverNav",
      * @mouseleave="mouseleaveNav",
      */
-    openNav(){
-      this.isShowNav = true
+    openNav() {
+      this.isShowNav = true;
     },
-    closeNav(){
-      this.isShowNav = false
-    },
+    closeNav() {
+      this.isShowNav = false;
+    }
   },
   computed: {
     articlePage() {
       return this.isSchoolNav && !includes(this.$route.name, fullFooterPage);
     },
     is109y() {
-      return includes(this.$route.name, ['achievement-109y_10school'])
+      return includes(this.$route.name, ["achievement-109y_10school"]);
     },
     articleNav() {
-      return { "article-nav": this.articlePage }
+      return { "article-nav": this.articlePage };
     },
     tenSchoolNavItemColor() {
       return {
         "ten-school": this.isSchoolNav,
         "article-nav-item": this.articlePage,
         "page-109y": this.is109y
-      }
+      };
     },
     tenSchoolBG() {
-      return { "ten-school-bg": this.articlePage }
+      return { "ten-school-bg": this.articlePage };
     },
-    footerRightShift () {
+    footerRightShift() {
       const isShift = !includes(this.$route.name, fullFooterPage);
 
-      return { "footer-minus-sidebar": isShift }
+      return { "footer-minus-sidebar": isShift };
     },
-    schools () {
-      return map( el => ({ name: el.name, path: `/schools/${el.key}` }), schoolList)
+    schools() {
+      return map(
+        el => ({ name: el.name, path: `/schools/${el.key}` }),
+        schoolList
+      );
     },
-    schools_0to5 () {
-      return slice(0,5, this.schools)
+    schools_0to5() {
+      return slice(0, 5, this.schools);
     },
-    schools_6to10 () {
-      return slice(5,10, this.schools)
+    schools_6to10() {
+      return slice(5, 10, this.schools);
     },
     showNav() {
-      return {'show-menu': this.isShowNav}
+      return { "show-menu": this.isShowNav };
     },
     chiNavItem() {
       return [
         ...map(el => ({ path: el.path, name: el.name }), superNineNine),
-        { path: '/exhibitions', name: '十校聯展' }
-      ]
+        { path: "/exhibitions", name: "十校聯展" }
+      ];
     },
     schoolNavItem() {
       return [
         ...map(
-          el => ({ path: el.path, name: el.name.split('-')[1] }),
-          filter( el => !equals(el.onNav, false), schoolExhibition)),
-      ]
+          el => ({ path: el.path, name: el.name.split("-")[1] }),
+          filter(el => !equals(el.onNav, false), schoolExhibition)
+        )
+      ];
     },
     getTitle() {
-      if(this.$route.name === "achievement-110y_10school") {
-        return `臺北市 110 學年度，各級學校美術班聯合展覽`
+      if (this.$route.name === "achievement-110y_10school") {
+        return `臺北市 110 學年度 各級學校美術班聯合展覽`;
       } else if (this.$route.name === "achievement-109y_10school") {
-        return `臺北市 109 學年度，各級學校美術班聯合展覽`
+        return `臺北市 109 學年度 各級學校美術班聯合展覽`;
       }
     }
   },
   created() {
-    console.log("this.$route.name:", this.$route.name)
-  },
-}
+    console.log("this.$route.name:", this.$route.name);
+  }
+};
 </script>
 
 <style lang="scss">
@@ -162,7 +179,7 @@ export default {
 }
 
 .ten-school-bg {
-  background: url('http://super-ninenine.synology.me/schools/bg-02.jpg');
+  background: url("http://super-ninenine.synology.me/schools/bg-02.jpg");
   background-repeat: repeat;
 }
 
@@ -181,7 +198,6 @@ i.bx.bx-menu {
 .ten-school:hover {
   color: var(--ten-school-dark-blue);
 }
-
 
 /* article-nav: 增加權重 */
 .article-nav.article-nav.article-nav {
