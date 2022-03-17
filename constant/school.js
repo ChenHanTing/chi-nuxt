@@ -11,7 +11,24 @@ export const school = [
   { key: 'fhsh', name: '臺北市立復興高級中學', abbr: '復興高中' },
 ]
 
-export const fullFooterPage = ['exhibitions', 'exhibitions-about', 'exhibitions-introduction', 'exhibitions-activity', 'achievement-109y_10school', 'achievement-110y_10school']
+/**
+ * @type {string[]}
+ *
+ * 主辦單位: 臺北市政府教育局
+ * 承辦單位: 臺北市立五常國民中學
+ *
+ * 協辦單位：
+ * 臺北市松山區民族國民小學
+ * 臺北市大安區建安國民小學
+ * 臺北市萬華區東園國民小學
+ * 臺北市立五常國民中學
+ * 臺北市立古亭國民中學
+ * 臺北市立金華國民中學
+ * 臺北市立百齡高級中學（國中部）
+ * 臺北市立中正高級中學
+ * 臺北市立明倫高級中學
+ * 臺北市立復興高級中學
+ */
 
 export const article = {
   mces: [

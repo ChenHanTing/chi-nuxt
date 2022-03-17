@@ -5,10 +5,9 @@
 
 <script>
 import Sidebar from "@/components/Sidebar";
-import {siteType} from "@/constant/website";
 
 export default {
-  meta: { genre: siteType.school },
+  layout: 'OneNine',
   components: { Sidebar }
 }
 </script>

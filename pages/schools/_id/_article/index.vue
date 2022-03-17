@@ -31,13 +31,12 @@
 
 <script>
 import Sidebar from "@/components/Sidebar";
-import {siteType} from "@/constant/website";
 import {equals} from 'ramda';
 import {article as schoolData} from "@/constant/school";
 import website from "@/mixins/website";
 
 export default {
-  meta: { genre: siteType.school },
+  layout: "schoolOneNine",
   components: { Sidebar },
   mixins: [website],
   data() {

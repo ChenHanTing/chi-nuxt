@@ -24,12 +24,11 @@
 </template>
 
 <script>
-import {siteType} from "@/constant/website";
 import website from "@/mixins/website";
 
 export default {
+  layout: 'OneNine',
   mixins: [website],
-  meta: { genre: siteType.school },
   data() {
     return {
       senior: [...Array(12).keys()].map(n => ({ image: `exhibition/senior/H${n+1}.JPG`, description: '展場圖片' })),

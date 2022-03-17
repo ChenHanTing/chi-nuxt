@@ -1,15 +1,10 @@
 <template lang="pug">
   .chi-layout
-    header#header.l-header.scroll-header(:class="tenSchoolBG")
+    header#header.l-header.scroll-header.ten-school-bg
       nav.nav.bd-container
-        a.nav__logo(v-if="isChiNav" href='#') LOGO
-        .nav-menu.nav__menu(v-if="isChiNav" :class="showNav")
-          ul.nav__list
-            li.nav__item(v-for="item in chiNavItem" @click="closeNav")
-              router-link.nav__link(:to="item.path") {{ item.name }}
-        a.nav__logo.ten-school(v-if="isSchoolNav" href='#' :class="articleNav")
+        a.nav__logo.ten-school(href='#' :class="articleNav")
           div {{getTitle}}
-        .nav-menu.nav__menu(v-if="isSchoolNav" :class="showNav")
+        .nav-menu.nav__menu(:class="showNav")
           ul.nav__list
             li.nav__item(v-for="item in schoolNavItem" @click="closeNav")
               router-link.nav__link(:to="item.path", :class="tenSchoolNavItemColor") {{ item.name }}
@@ -19,14 +14,14 @@
         )
           i.bx.bx-menu(:class="articleNav")
     nuxt
-    footer.footer.section.footer-container(v-if="isSchoolNav", :class="footerRightShift")
+    footer.footer.section.footer-container.footer-minus-sidebar
       .footer__container.bd-grid
         .footer__content
           .footer-abc
             a.footer__logo.ten-school(href='#') 參與單位
             ul
               li
-                .footer__link.ten-school-hover 主辦單位: 臺北市政府教育局
+                .footer__link.ten-school-hover 主辦單位: 臺北市政府教育局12345
               li
                 .footer__link.ten-school-hover 承辦單位: 臺北市復興高級中學
         .footer__content
@@ -52,7 +47,7 @@ import {
   host,
   currentYear
 } from "@/constant/website";
-import { school as schoolList, fullFooterPage } from "@/constant/school";
+import { school as schoolList } from "@/constant/school";
 
 export default {
   head() {
@@ -63,7 +58,7 @@ export default {
           hid: "description",
           name: "description",
           content: `臺北市 ${this.$route.query.y ??
-            109} 學年度 各級學校美術班聯合展覽`
+          109} 學年度 各級學校美術班聯合展覽`
         }
       ],
       link: [
@@ -104,7 +99,7 @@ export default {
   },
   computed: {
     articlePage() {
-      return this.isSchoolNav && !includes(this.$route.name, fullFooterPage);
+      return this.isSchoolNav && !includes(this.$route.name, true);
     },
     is109y() {
       return includes(this.$route.name, ["achievement-109y_10school"]);
@@ -121,11 +116,6 @@ export default {
     },
     tenSchoolBG() {
       return { "ten-school-bg": this.articlePage };
-    },
-    footerRightShift() {
-      const isShift = !includes(this.$route.name, fullFooterPage);
-
-      return { "footer-minus-sidebar": isShift };
     },
     schools() {
       return map(
@@ -165,67 +155,18 @@ export default {
     }
   },
   created() {
-    console.log("this.$route.name:", this.$route.name);
-  }
+  },
+  layout: 'schoolOneNine'
 };
 </script>
 
 <style lang="scss">
 @import "@/assets/mixins/navbar.scss";
 @import "@/assets/mixins/footer.scss";
-
-.nav__logo.ten-school {
-  font-size: 1.4rem;
-}
+@import "@/assets/mixins/109y.scss";
 
 .ten-school-bg {
   background: url("http://super-ninenine.synology.me/schools/bg-02.jpg");
   background-repeat: repeat;
-}
-
-a.nav__logo.ten-school {
-  color: var(--ten-school-dark-blue);
-}
-
-i.bx.bx-menu {
-  color: var(--ten-school-dark-blue);
-}
-
-.ten-school {
-  color: var(--ten-school-dark-blue);
-}
-
-.ten-school:hover {
-  color: var(--ten-school-dark-blue);
-}
-
-/* article-nav: 增加權重 */
-.article-nav.article-nav.article-nav {
-  color: var(--body-color);
-}
-.article-nav.article-nav:hover {
-  color: var(--ten-school-pink);
-}
-
-/* article-nav: 增加權重 */
-@media screen and (min-width: 768px) {
-  .article-nav-item.article-nav-item.article-nav-item {
-    color: var(--body-color);
-  }
-  .article-nav-item.article-nav-item:hover {
-    color: var(--ten-school-pink);
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .article-nav-item.article-nav-item:hover {
-    color: var(--ten-school-dark-blue);
-  }
-}
-
-.page-109y {
-  i.bx.bx-menu {
-    color: transparent;
-  }
 }
 </style>

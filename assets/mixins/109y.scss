@@ -1,0 +1,49 @@
+.nav__logo.ten-school {
+  font-size: 1.4rem;
+}
+
+a.nav__logo.ten-school {
+  color: var(--ten-school-dark-blue) !important;
+}
+
+i.bx.bx-menu {
+  color: var(--ten-school-dark-blue);
+}
+
+.ten-school {
+  color: var(--ten-school-dark-blue) !important;
+}
+
+.ten-school:hover {
+  color: var(--ten-school-dark-blue);
+}
+
+/* article-nav: 增加權重 */
+.article-nav.article-nav.article-nav {
+  color: var(--body-color);
+}
+.article-nav.article-nav:hover {
+  color: var(--ten-school-pink);
+}
+
+/* article-nav: 增加權重 */
+@media screen and (min-width: 768px) {
+  .article-nav-item.article-nav-item.article-nav-item {
+    color: var(--body-color);
+  }
+  .article-nav-item.article-nav-item:hover {
+    color: var(--ten-school-pink);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .article-nav-item.article-nav-item:hover {
+    color: var(--ten-school-dark-blue);
+  }
+}
+
+.page-109y {
+  i.bx.bx-menu {
+    color: transparent;
+  }
+}

@@ -12,12 +12,11 @@ main
 </template>
 
 <script>
-import {siteType} from "@/constant/website";
 import website from "@/mixins/website";
 
 export default {
+  layout: 'OneNine',
   mixins: [website],
-  meta: { genre: siteType.school },
 };
 </script>
 

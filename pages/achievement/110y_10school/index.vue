@@ -7,11 +7,10 @@ main
 </template>
 
 <script>
-import {siteType, host} from "@/constant/website";
+import {host} from "@/constant/website";
 
 export default {
-  // layout: 'default',
-  meta: { genre: siteType.school },
+  layout: 'OneNine',
   created() {},
   computed: {
     image() {

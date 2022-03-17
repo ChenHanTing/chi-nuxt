@@ -1,6 +1,6 @@
 <template lang="pug">
 #sidebar
-  .school-layout(v-if="isSchoolNav")
+  .school-layout
     .sidebar
       ul
         li(v-for="item in schools")

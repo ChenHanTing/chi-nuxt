@@ -4,12 +4,10 @@ main
 </template>
 
 <script>
-import {siteType} from "@/constant/website";
 import website from "@/mixins/website";
 
 export default {
-  // layout: 'default',
-  meta: { genre: siteType.school },
+  layout: 'OneNine',
   mixins: [website],
 }
 </script>

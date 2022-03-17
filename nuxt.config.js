@@ -17,17 +17,16 @@ export default {
       { hid: 'og:title'  , property: 'og:title', content: '心之所向' },
       { hid: 'description', name: 'description', content: pkg.description },
       { hid: 'og:description', property: 'og:description', content: pkg.description },
-      // { hid: 'og:url', property: 'og:url', content: 'https://chenhanting.github.io/'},
-      // { hid: 'og:image' , property: 'og:image' , content: 'https://chenhanting.github.io/'},
-      { hid: 'og:type' , property: 'og:type' , content: 'website'},
+      { hid: 'og:url', property: 'og:url', content: 'https://woo-think.vercel.app/'},
+      { hid: 'og:image', property: 'og:image', content: '/palette.png'},
+      { hid: 'og:type' , property: 'og:type' , content: 'ninenine-digital-design'},
     ],
+    /* bootstrap, boxicons, fontawesome 放在這裡會比較好 */
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'
-      }
+      { rel: 'icon', type: 'image/x-icon', href: '/palette.png' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css' },
+      { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" },
+      { rel: "stylesheet", href: "https://pro.fontawesome.com/releases/v5.10.0/css/all.css" }
     ]
   },
 
