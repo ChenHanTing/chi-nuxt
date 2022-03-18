@@ -1,6 +1,5 @@
 import { mapGetters } from 'vuex';
-import {map} from "ramda";
-import {superNineNine} from "@/constant/website";
+import {host} from "@/constant/website";
 
 const computed = {
   ...mapGetters({ getWebsite: 'getWebsite' }),
@@ -9,6 +8,8 @@ const computed = {
 export default {
   data() {
     return {
+      imageBaseOneNine: `${host}/109`,
+      imageBaseOneTen: `${host}/110`,
       isShowNav: false
     };
   },

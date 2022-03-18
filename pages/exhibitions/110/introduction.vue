@@ -1,6 +1,6 @@
 <template lang="pug">
   main
-    img.full-width(:src="`${imageBaseOneNine}/partial-banner.jpg`")
+    img.full-width(:src="`${imageBaseOneTen}/partial-banner.jpg`")
     .title
       h1 展場介紹
     .article
@@ -8,26 +8,23 @@
     .gallery
       figure(v-for="item in senior")
         img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
-        //- figcaption {{item.description}}
     .article
       h1 國中作品
     .gallery
       figure(v-for="item in junior")
         img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
-        //- figcaption {{item.description}}
     .article
       h1 國小作品
     .gallery
       figure(v-for="item in elementory")
         img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
-        //- figcaption {{item.description}}
 </template>
 
 <script>
 import website from "@/mixins/website";
 
 export default {
-  layout: 'OneNine',
+  layout: 'OneTen',
   mixins: [website],
   data() {
     return {

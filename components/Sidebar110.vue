@@ -1,18 +1,18 @@
 <template lang="pug">
-#sidebar
-  .school-layout
-    .sidebar
-      ul
-        li(v-for="item in schools")
-          router-link(:to="item.path" :class="selected(item.id)") {{ item.name }}
-    .tab-mobile
-      table.mobile-tabs-wrapper
-        tr(v-for="i in formatMobileTab")
-          td(v-for="j in i")
-            nuxt-link.mobile-tab(:to="j.path || ''")
-              span {{ j.abbr }}
-    .content
-      slot
+  #sidebar
+    .school-layout
+      .sidebar
+        ul
+          li(v-for="item in schools")
+            router-link(:to="item.path" :class="selected(item.id)") {{ item.name }}
+      .tab-mobile
+        table.mobile-tabs-wrapper
+          tr(v-for="i in formatMobileTab")
+            td(v-for="j in i")
+              nuxt-link.mobile-tab(:to="j.path || ''")
+                span {{ j.abbr }}
+      .content
+        slot
 </template>
 
 <script>
@@ -49,10 +49,10 @@ export default {
   data,
   computed: {
     schools () {
-      return map( el => ({ name: el.name, path: `/schools/${el.key}`, id: el.key }), schoolList)
+      return map( el => ({ name: el.name, path: `/schools/110/${el.key}`, id: el.key }), schoolList)
     },
     abbrSchools () {
-      return map( el => ({ abbr: el.abbr, path: `/schools/${el.key}` }), schoolList)
+      return map( el => ({ abbr: el.abbr, path: `/schools/110/${el.key}` }), schoolList)
     },
     formatMobileTab () {
       const formattedData = splitEvery(3, this.abbrSchools);
@@ -70,6 +70,6 @@ export default {
 
 .sidebar {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%,
-    rgba(255, 255, 255, 1)), url('http://super-ninenine.synology.me/109/schools/bg-01.jpg');
+    rgba(255, 255, 255, 1)), url('http://super-ninenine.synology.me/110/schools/bg-01.jpg');
 }
 </style>

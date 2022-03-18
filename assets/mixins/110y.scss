@@ -1,21 +1,21 @@
-.nav__logo.ten-school {
+.nav__logo.ten-school-110 {
   font-size: 1.4rem;
 }
 
-a.nav__logo.ten-school {
-  color: var(--ten-school-dark-blue) !important;
+a.nav__logo.ten-school-110 {
+  color: var(--ten-school-110) !important;
 }
 
 i.bx.bx-menu {
-  color: var(--ten-school-dark-blue) !important;
+  color: var(--ten-school-110) !important;
 }
 
-.ten-school {
-  color: var(--ten-school-dark-blue) !important;
+.ten-school-110 {
+  color: var(--ten-school-110) !important;
 }
 
-.ten-school:hover {
-  color: var(--ten-school-dark-blue) !important;
+.ten-school-110:hover {
+  color: var(--ten-school-110) !important;
 }
 
 /* article-nav: 增加權重 */
@@ -38,7 +38,7 @@ i.bx.bx-menu {
 
 @media screen and (max-width: 767px) {
   .article-nav-item:hover {
-    color: var(--ten-school-dark-blue) !important;
+    color: var(--ten-school-110) !important;
   }
 }
 

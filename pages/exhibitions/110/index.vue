@@ -1,13 +1,13 @@
 <template lang="pug">
 main
-  img.full-width(:src="`${imageBaseOneNine}/banner.jpg`")
+  img.full-width(:src="`${imageBaseOneTen}/banner.jpg`")
 </template>
 
 <script>
 import website from "@/mixins/website";
 
 export default {
-  layout: 'OneNine',
+  layout: 'OneTen',
   mixins: [website],
 }
 </script>

@@ -1,6 +1,6 @@
 <template lang="pug">
   main
-    img.full-width(:src="`${imageBaseOneNine}/partial-banner.jpg`")
+    img.full-width(:src="`${imageBaseOneTen}/partial-banner.jpg`")
     .title
       h1 活動花絮
     .gallery
@@ -13,7 +13,7 @@
 import website from "@/mixins/website";
 
 export default {
-  layout: 'OneNine',
+  layout: 'OneTen',
   mixins: [website],
   data() {
     return {

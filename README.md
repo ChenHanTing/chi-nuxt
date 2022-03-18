@@ -139,8 +139,20 @@ tenSchoolNavItemColor() {
 },
 ````
 
+### this.$route
 
+````js
+this.$route.query // query string
+this.$route.path  // path
+````
+
+### 110
+
+進入線上藝廊的按鈕和109年度的外觀有差
+
+![](https://tva1.sinaimg.cn/large/e6c9d24egy1h0dvza5h4lj20f606ujrf.jpg)
 
 ### 參考來源
 
 - [icon](https://www.flaticon.com/search?word=art&order_by=4&type=icon)
+- [圖片路徑](https://forum.freecodecamp.org/t/problem-with-image-path-generated-from-function-in-react/249420)

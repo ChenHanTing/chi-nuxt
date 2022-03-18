@@ -10,7 +10,7 @@ main
 import {host} from "@/constant/website";
 
 export default {
-  layout: 'OneNine',
+  layout: 'OneTen',
   created() {},
   computed: {
     image() {
@@ -29,28 +29,27 @@ export default {
   width: 100%;
 
   .home-page-btn {
-    background-image: linear-gradient(to right, #1B5BAF, #142A90);
+    background-color: #dcdcdd;
     cursor: pointer;
     font-weight: bold;
     margin: 100px auto 0;
     height: 64px;
     width: 250px;
     z-index: 3;
-    border-radius: 56px;
     border: white 3px solid;
-    box-shadow: 0 0 0 10px #1845A1;
+    box-shadow: 0 0 0 10px #9f9fa0;
     position: relative;
     display: flex;
 
     span {
       margin: 14px auto 0;
       font-size: 1.33rem;
-      color: white;
+      color: #3e3a39;
       position: relative;
 
       &::before {
         content: '\f105';
-        color: white !important;
+        color: #3e3a39 !important;
         font-family: 'Font Awesome 5 Free';
         position: absolute;
         right: -30px;
@@ -58,7 +57,7 @@ export default {
       }
 
       &:hover {
-        color: yellow;
+        color: var(--brownish-grey);
       }
     }
 
@@ -70,13 +69,12 @@ export default {
       left: 0;
       right: 0;
       bottom: -6px;
-      background: #1B5BAF;
+      background: #9f9fa0;
       z-index: 2;
       height: 70px;
       width: 250px;
 
-      border-radius: 32px;
-      box-shadow: 0 0 36px 30px #1B5BAF;
+      box-shadow: 0 0 36px 30px #9f9fa0;
       transform: scale(.7);
       opacity: .2;
     }

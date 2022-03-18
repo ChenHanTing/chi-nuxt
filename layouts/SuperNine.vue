@@ -1,6 +1,6 @@
 <template lang="pug">
   .chi-layout
-    header#header.l-header.scroll-header.ten-school-bg
+    header#header.l-header.scroll-header
       nav.nav.bd-container
         a.nav__logo(href='#') 九九數位
         .nav-menu.nav__menu(:class="showNav")

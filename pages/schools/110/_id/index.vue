@@ -14,11 +14,11 @@ Sidebar
 <script>
 import { find, propEq } from 'ramda';
 import {article as schoolData, school} from '@/constant/school';
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/Sidebar110";
 import website from "@/mixins/website";
 
 export default {
-  layout: "SchoolOneNine",
+  layout: "SchoolOneTen",
   mixins: [website],
   data() {
     return {

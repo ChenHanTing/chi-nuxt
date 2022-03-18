@@ -2,54 +2,54 @@
   .chi-layout
     header#header.l-header.scroll-header
       nav.nav.bd-container
-        a.nav__logo.ten-school.ten-school(href='#')
-          div 臺北市109學年度 各級學校美術班聯合展覽
+        a.nav__logo.ten-school-110(href='#')
+          div 臺北市110學年度 各級學校美術班聯合展覽
         .nav-menu.nav__menu(:class="showNav")
           ul.nav__list
             li.nav__item(v-for="item in schoolNavItem" @click="closeNav")
-              router-link.nav__link.ten-school(:to="item.path") {{ item.name }}
-        .nav-toggle.ten-school(@click="toggleNav")
-          i.bx.bx-menu.article-nav
+              router-link.nav__link.ten-school-110(:to="item.path") {{ item.name }}
+        .nav-toggle.ten-school-110.d-lg-none(@click="toggleNav")
+          i.bx.bx-menu
     nuxt
     footer.footer.section.footer-container
       .footer__container.bd-grid
         .footer__content
           .footer-abc
-            a.footer__logo.ten-school(href='#') 參與單位
+            a.footer__logo.ten-school-110(href='#') 參與單位
             ul
               li
-                .footer__link.ten-school-hover 主辦單位: 臺北市政府教育局
+                .footer__link.ten-school-110-hover 主辦單位: 臺北市政府教育局
               li
-                .footer__link.ten-school-hover 承辦單位: 臺北市復興高級中學
+                .footer__link.ten-school-110-hover 承辦單位: 臺北市立五常國民中學
         .footer__content
           .footer-abc
-            a.footer__logo.ten-school(href='#') 協辦單位
+            a.footer__logo.ten-school-110(href='#') 協辦單位
             ul
               li(v-for="item in schools_0to5")
-                router-link.footer__link.ten-school-hover(:to="item.path") {{ item.name }}
+                router-link.footer__link.ten-school-110-hover(:to="item.path") {{ item.name }}
         .footer__content
           .footer-abc
-            a.footer__logo.ten-school(href='#')
+            a.footer__logo.ten-school-110(href='#')
             ul.y-shift
               li(v-for="item in schools_6to10")
-                router-link.footer__link.ten-school-hover(:to="item.path") {{ item.name }}
+                router-link.footer__link.ten-school-110-hover(:to="item.path") {{ item.name }}
 </template>
 
 <script>
 import website from "@/mixins/website";
 import { map, equals, filter, slice } from "ramda";
-import { schoolExhibition } from "@/constant/website";
+import {schoolExhibitionOneTen as schoolExhibition} from "@/constant/website";
 import { school as schoolList } from "@/constant/school";
 
 export default {
   head() {
     return {
-      title: "心之所向",
+      title: "藝情時代",
       meta: [
-        { hid: "description", name: "109y", content: "臺北市109學年度各級學校美術班聯合展覽" }
+        { hid: "description", name: "110y", content: "臺北市110學年度各級學校美術班聯合展覽" }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/109y.png' },
+        { rel: 'icon', type: 'image/x-icon', href: '/110y.png' },
       ]
     };
   },
@@ -75,7 +75,7 @@ export default {
     },
   },
   created() {},
-  layout: 'OneNine'
+  layout: 'OneTen'
 };
 </script>
 

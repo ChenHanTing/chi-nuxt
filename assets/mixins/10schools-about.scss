@@ -1,0 +1,43 @@
+.title {
+  display: flex;
+  justify-content: center;
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+  }
+
+  h1 {
+    text-align: center;
+    padding-bottom: 1px;
+    border-bottom: 4px var(--ten-school-title-blue) solid;
+  }
+}
+.content,
+.content-bottom {
+  margin: 40px 60px;
+}
+
+@media screen and (min-width: 768px) {
+  .content,
+  p.content-bottom {
+    margin: 40px 120px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .content,
+  p.content-bottom {
+    margin: 40px 20%;
+  }
+}
+
+.last-content {
+  margin-bottom: 80px;
+}
+
+p.content-bottom {
+  text-align: right;
+}
+
+.content-bottom {
+  margin: 30px 60px;
+}

@@ -55,3 +55,32 @@ export const schoolExhibition = [
     name: "十校連展-活動花絮",
   },
 ]
+
+/* 十校聯展 */
+export const schoolExhibitionOneTen = [
+  {
+    path: "/exhibitions/110",
+    name: "十校連展-首頁",
+  },
+  {
+    path: "/exhibitions/110/about",
+    name: "十校連展-關於展覽",
+  },
+  {
+    path: "/schools/110/:id",
+    name: "十校連展-各校",
+    onNav: false
+  },
+  {
+    path: "/schools/110/mces",
+    name: "十校連展-各校作品",
+  },
+  {
+    path: "/exhibitions/110/introduction",
+    name: "十校連展-展場介紹",
+  },
+  {
+    path: "/exhibitions/110/activity",
+    name: "十校連展-活動花絮",
+  },
+]

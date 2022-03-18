@@ -1,4 +1,8 @@
-
+.d-lg-none {
+  @media screen and (min-width: 991px) {
+    display: none;
+  }
+}
 /*========== NAV ==========*/
 .nav{
   max-width: 1024px;
