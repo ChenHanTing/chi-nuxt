@@ -4,8 +4,8 @@
     .title
       h1 活動花絮
     .gallery
-      figure(v-for="item in gallery")
-        img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
+      //figure(v-for="item in gallery")
+      //  img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
         //- figcaption {{item.description}}
 </template>
 

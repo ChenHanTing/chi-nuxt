@@ -57,7 +57,7 @@ export default {
   name: "navbar",
   computed: {
     schools() {
-      return map(el => ({ name: el.name, path: `/schools/${el.key}` }), schoolList);
+      return map(el => ({ name: el.name, path: `/schools/${el.key}` }), schoolList.filter(e => e.key !== "wjhs"));
     },
     schools_0to5() {
       return slice(0, 5, this.schools);

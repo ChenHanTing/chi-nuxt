@@ -12,7 +12,7 @@ export const school = [
 ]
 
 /**
- * @type {string[]}
+ * 110
  *
  * 主辦單位: 臺北市政府教育局
  * 承辦單位: 臺北市立五常國民中學
@@ -30,6 +30,7 @@ export const school = [
  * 臺北市立復興高級中學
  */
 
+/* 109 */
 export const article = {
   mces: [
     { id: 1, title: '笑臉餅乾', teacher: '陳映竹', author: '楊少嘉/三年級', tool: '水墨/四開', description: '我想畫笑臉餅乾的原因是因為餅乾排排站看起來很療癒，而且上了金色顏料的餅乾，看起來更美味。' },

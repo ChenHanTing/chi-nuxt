@@ -63,7 +63,7 @@ export default {
     schools() {
       return map(
         el => ({ name: el.name, path: `/schools/${el.key}` }),
-        schoolList
+        schoolList.filter(e => e.key !== "wjhs")
       );
     },
     schools_0to5() {

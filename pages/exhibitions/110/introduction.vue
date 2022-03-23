@@ -6,18 +6,18 @@
     .article
       h1 高中作品
     .gallery
-      figure(v-for="item in senior")
-        img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
+      //figure(v-for="item in senior")
+      //  img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
     .article
       h1 國中作品
     .gallery
-      figure(v-for="item in junior")
-        img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
+      //figure(v-for="item in junior")
+      //  img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
     .article
       h1 國小作品
     .gallery
-      figure(v-for="item in elementory")
-        img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
+      //figure(v-for="item in elementory")
+      //  img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
 </template>
 
 <script>
