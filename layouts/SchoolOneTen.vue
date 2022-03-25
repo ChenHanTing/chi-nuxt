@@ -50,7 +50,10 @@ export default {
           hid: "description",
           name: "description",
           content: "臺北市110學年度 各級學校美術班聯合展覽"
-        }
+        },
+        { hid: 'og:image', property: 'og:image', content: '/110y.png'},
+        { hid: 'og:title'  , property: 'og:title', content: '藝情時代' },
+        // { hid: 'og:description', property: 'og:description', content: pkg.description },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/110y.png' },

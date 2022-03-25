@@ -40,13 +40,17 @@ import website from "@/mixins/website";
 import { map, equals, filter, slice } from "ramda";
 import {schoolExhibitionOneTen as schoolExhibition} from "@/constant/website";
 import { school as schoolList } from "@/constant/school";
+import pkg from "@/package.json";
 
 export default {
   head() {
     return {
       title: "藝情時代",
       meta: [
-        { hid: "description", name: "110y", content: "臺北市110學年度各級學校美術班聯合展覽" }
+        { hid: "description", name: "110y", content: "臺北市110學年度各級學校美術班聯合展覽" },
+        { hid: 'og:image', property: 'og:image', content: '/110y.png'},
+        { hid: 'og:title'  , property: 'og:title', content: '藝情時代' },
+        // { hid: 'og:description', property: 'og:description', content: pkg.description },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/110y.png' },
