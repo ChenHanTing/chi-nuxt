@@ -71,5 +71,15 @@ export default {
 .sidebar {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%,
     rgba(255, 255, 255, 1)), url('http://super-ninenine.synology.me/110/schools/bg-01.jpg');
+
+  li {
+    a.selected {
+      color: #004566 !important;
+
+      &:before {
+        color: #004566 !important;
+      }
+    }
+  }
 }
 </style>

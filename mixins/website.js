@@ -23,6 +23,13 @@ export default {
     },
     closeNav() {
       this.isShowNav = false;
+    },
+    /* 檢查路徑是否存在 */
+    async checkImage(url) {
+      const res = await this.$axios.get(url)
+      console.log("res:", res);
+
+      return true
     }
   },
   computed: {

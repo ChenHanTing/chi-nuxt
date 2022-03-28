@@ -152,6 +152,35 @@ this.$route.path  // path
 
 ![](https://tva1.sinaimg.cn/large/e6c9d24egy1h0dvza5h4lj20f606ujrf.jpg)
 
+#### 檢查圖片是否存在
+
+````js
+export function checkImage(url) {
+  const request = new XMLHttpRequest();
+  request.open("GET", url, true);
+  request.send();
+  
+  return request.status == 200
+}
+````
+
+### 快捷鍵
+
+- 沒有選擇只有游標的話，`ctrl+c`就是複製
+
+- 選行模式：`shift + command + 8`
+
+- 進入選行模式以後，先用`ctrl + F`
+
+  `ctrl + G`的話跳到下一個關鍵字（`next occurrance`）
+  `ctrl + shift + G`的話跳到上個關鍵字（`next occurrance`）
+
+- `cmd + 左邊`：游標到最左
+
+- 多選往下平移：`下面`
+
+
+
 ### 參考來源
 
 - [icon](https://www.flaticon.com/search?word=art&order_by=4&type=icon)

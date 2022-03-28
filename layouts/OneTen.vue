@@ -25,13 +25,13 @@
           .footer-abc
             a.footer__logo.ten-school-110(href='#') 協辦單位
             ul
-              li(v-for="item in schools_0to5")
+              li(v-for="item in schoolsFront")
                 router-link.footer__link.ten-school-110-hover(:to="item.path") {{ item.name }}
         .footer__content
           .footer-abc
             a.footer__logo.ten-school-110(href='#')
             ul.y-shift
-              li(v-for="item in schools_6to10")
+              li(v-for="item in schoolsRear")
                 router-link.footer__link.ten-school-110-hover(:to="item.path") {{ item.name }}
 </template>
 
@@ -50,7 +50,7 @@ export default {
         { hid: "description", name: "110y", content: "臺北市110學年度各級學校美術班聯合展覽" },
         { hid: 'og:image', property: 'og:image', content: '/110y.png'},
         { hid: 'og:title'  , property: 'og:title', content: '藝情時代' },
-        // { hid: 'og:description', property: 'og:description', content: pkg.description },
+        { hid: 'og:description', property: 'og:description', content: "藝情時代 - 臺北市110學年度各級學校美術班聯合展覽" },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/110y.png' },
@@ -63,10 +63,10 @@ export default {
     schools() {
       return map(el => ({ name: el.name, path: `/schools/${el.key}` }), schoolList.filter(e => e.key !== "wjhs"));
     },
-    schools_0to5() {
+    schoolsFront() {
       return slice(0, 5, this.schools);
     },
-    schools_6to10() {
+    schoolsRear() {
       return slice(5, 10, this.schools);
     },
     schoolNavItem() {

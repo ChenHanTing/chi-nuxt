@@ -25,13 +25,13 @@
           .footer-abc
             a.footer__logo.ten-school(href='#') 協辦單位
             ul
-              li(v-for="item in schools_0to5")
+              li(v-for="item in schoolsFront")
                 router-link.footer__link.ten-school-hover(:to="item.path") {{ item.name }}
         .footer__content
           .footer-abc
             a.footer__logo.ten-school(href='#')
             ul.y-shift
-              li(v-for="item in schools_6to10")
+              li(v-for="item in schoolsRear")
                 router-link.footer__link.ten-school-hover(:to="item.path") {{ item.name }}
 </template>
 
@@ -66,10 +66,10 @@ export default {
         schoolList
       );
     },
-    schools_0to5() {
+    schoolsFront() {
       return slice(0, 5, this.schools);
     },
-    schools_6to10() {
+    schoolsRear() {
       return slice(5, 10, this.schools);
     },
     schoolNavItem() {

@@ -3,9 +3,9 @@ Sidebar
   h1 {{ schoolName }}
   .school-cards
     .card(v-for="(item, index) in mySchool" @contextmenu.prevent="handler")
-      NuxtLink(:to="`/schools/110/${$route.params.id}/${index+1}`")
+      NuxtLink(:to="`/schools/110/${$route.params.id}/${index + 1}`")
         .image
-          img(:src="imagePath(index+1)")
+          img(:src="imagePath(index + 1)")
         .container
           h4 {{item.title}}
           p {{item.author}}
@@ -25,8 +25,7 @@ export default {
       mySchool: schoolData[this.$route.params.id],
     }
   },
-  created() {
-  },
+  created() {},
   computed: {
     schoolName() {
       return find(propEq('key', this.$route.params.id))(school)?.name;
