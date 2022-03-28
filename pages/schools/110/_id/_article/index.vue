@@ -32,7 +32,7 @@
 <script>
 import Sidebar from "@/components/Sidebar110";
 import {equals} from 'ramda';
-import {article as schoolData} from "@/constant/school";
+import {articleOneTen as schoolData} from "@/constant/school";
 import website from "@/mixins/website";
 
 export default {
@@ -53,10 +53,10 @@ export default {
     },
     showVideoIcon() {
       try {
-        return !!`${this.imageBaseOneNine}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`;
+        return !!`${this.imageBaseOneTen}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`;
       } catch {
         try {
-          return !!`${this.imageBaseOneNine}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`;
+          return !!`${this.imageBaseOneTen}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`;
         } catch {
           return false
         }
@@ -83,18 +83,14 @@ export default {
       this.$router.push({ params: { id: this.$route.params.id, article: articleId } })
     },
     imagePath() {
-      try {
-        return `${this.imageBaseOneNine}/articles/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.jpg`;
-      } catch(error) {
-        return `${this.imageBaseOneNine}/articles/default/${this.$route.params.article}.jpg`;
-      }
+      return `${this.imageBaseOneTen}/schools/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.jpg`;
     },
     videoPath() {
       try {
-        return `${this.imageBaseOneNine}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`;
+        return `${this.imageBaseOneTen}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.mp4`;
       } catch(error) {
         try {
-          return `${this.imageBaseOneNine}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`;
+          return `${this.imageBaseOneTen}/video/${this.$route.params.id}/${this.$route.params.article.toString().padStart(2, '0')}.MP4`;
         } catch(error2) {
         }
       }
