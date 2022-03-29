@@ -2,7 +2,7 @@
 main
   img.full-width(:src="image")
   .home-page-container
-    router-link.home-page-btn(type="button" to="/schools/mces")
+    router-link.home-page-btn(type="button" to="/schools/110/mces")
       span 進入線上藝廊
 </template>
 

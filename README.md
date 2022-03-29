@@ -179,7 +179,24 @@ export function checkImage(url) {
 
 - 多選往下平移：`下面`
 
+### axios
 
+Add it into your `nuxt.config.js` file:
+
+```javascript
+modules: [
+    '@nuxtjs/axios',
+  ],
+
+  axios: {
+    // extra config e.g
+    // BaseURL: 'https://link-to-API'
+  }
+```
+
+The `modules` array accepts a list of Nuxt.js modules such as dotenv, auth and in this case, Axios. What we’ve done is to inform our application that we would be using the Axios module, which we reference using `@nuxtjs/axios`. This is then followed by the `axios` property which is an object of configurations like the baseURL for both client-side and server-side.
+
+Now, you can access Axios from anywhere in your application by calling `this.$axios.method` or `this.$axios.$method`. Where *method* can be `get`, `post`, or `delete`.
 
 ### 參考來源
 
