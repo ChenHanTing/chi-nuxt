@@ -53,7 +53,11 @@ export default {
         },
         { hid: 'og:image', property: 'og:image', content: '/110y.png'},
         { hid: 'og:title'  , property: 'og:title', content: '藝情時代' },
+        { hid: 'og:url'  , property: 'og:url', content: 'http://super-ninenine.synology.me/exhibitions/110/' },
         { hid: 'og:description', property: 'og:description', content: "藝情時代 - 臺北市110學年度各級學校美術班聯合展覽" },
+        { hid: 'robots', name: "robots", content: "index,follow" },
+        { hid: 'keywords', name: "keywords", content: "藝情時代,十校聯展,疫情時代,110,十校,九九數位,九九" },
+        { hid: 'og:keywords', name: "og:keywords", content: "藝情時代,十校聯展,疫情時代,110,十校,九九數位,九九" },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/110y.png' },

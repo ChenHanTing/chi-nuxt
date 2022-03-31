@@ -37,6 +37,19 @@ import website from "@/mixins/website";
 import {host} from "@/constant/website";
 
 export default {
+  head() {
+    return {
+      title: this.article.title,
+      meta: [
+        { hid: 'og:image', property: 'og:image', content: this.imagePath },
+        { hid: 'og:title'  , property: 'og:title', content: this.article.title },
+        { hid: 'og:description', property: 'og:description', content: this.article.description },
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/110y.png' },
+      ]
+    };
+  },
   layout: "SchoolOneTen",
   components: { Sidebar },
   mixins: [website],
