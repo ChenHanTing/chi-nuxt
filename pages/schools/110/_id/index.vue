@@ -45,4 +45,18 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/mixins/school.scss";
+
+.school-cards {
+  a {
+    h4 {
+      margin-bottom: 2px;
+      padding-bottom: 2px;
+    }
+
+    p {
+      margin-top: 2px;
+      padding-top: 2px;
+    }
+  }
+}
 </style>
