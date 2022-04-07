@@ -4,7 +4,9 @@
       .sidebar
         ul
           li(v-for="item in schools")
-            router-link(:to="item.path" :class="selected(item.id)") {{ item.name }}
+            router-link(:to="item.path" :class="selected(item.id)")
+              span {{ item.name }}
+              .en {{ item.en }}
       .tab-mobile
         table.mobile-tabs-wrapper
           tr(v-for="i in formatMobileTab")
@@ -49,7 +51,7 @@ export default {
   data,
   computed: {
     schools () {
-      return map( el => ({ name: el.name, path: `/schools/110/${el.key}`, id: el.key }), schoolList)
+      return map( el => ({ name: el.name, path: `/schools/110/${el.key}`, id: el.key, en: el.en }), schoolList)
     },
     abbrSchools () {
       return map( el => ({ abbr: el.abbr, path: `/schools/110/${el.key}` }), schoolList)
@@ -68,6 +70,13 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/mixins/sidebar.scss";
 
+.en {
+  width: 80%;
+  margin: 0;
+  padding-bottom: 1rem;
+  font-size: .5rem;
+  line-height: 1;
+}
 .sidebar {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%,
     rgba(255, 255, 255, 1)), url('http://super-ninenine.synology.me/110/schools/bg-01.jpg');

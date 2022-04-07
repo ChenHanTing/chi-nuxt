@@ -7,7 +7,9 @@
         .nav-menu.nav__menu(:class="showNav")
           ul.nav__list
             li.nav__item(v-for="item in schoolNavItem" @click="closeNav")
-              router-link.nav__link.ten-school-110(:to="item.path") {{ item.name }}
+              router-link.nav__link.ten-school-110(:to="item.path")
+                span {{ item.name }}
+                span {{ item.en }}
         .nav-toggle.nav__toggle.ten-school-110(@click="toggleNav")
           i.bx.bx-menu
     nuxt
@@ -69,7 +71,7 @@ export default {
   computed: {
     schools() {
       return map(
-        el => ({ name: el.name, path: `/schools/${el.key}` }),
+        el => ({ name: el.name, path: `/schools/${el.key}`, en: el.en }),
         schoolList.filter(e => e.key !== "wjhs")
       );
     },
@@ -82,7 +84,7 @@ export default {
     schoolNavItem() {
       return [
         ...map(
-          el => ({ path: el.path, name: el.name.split("-")[1] }),
+          el => ({ path: el.path, name: el.name.split("-")[1], en: el.en }),
           filter(el => !equals(el.onNav, false), schoolExhibition)
         )
       ];
@@ -98,6 +100,15 @@ export default {
 .ten-school-110-bg {
   background: url("http://super-ninenine.synology.me/110/schools/bg-02.jpg");
   background-repeat: repeat;
+}
+
+.ten-school-110 {
+  span {
+    text-transform: capitalize;
+  }
+  span + span {
+    display: block;
+  }
 }
 </style>
 

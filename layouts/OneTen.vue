@@ -7,7 +7,9 @@
         .nav-menu.nav__menu(:class="showNav")
           ul.nav__list
             li.nav__item(v-for="item in schoolNavItem" @click="closeNav")
-              router-link.nav__link.ten-school-110(:to="item.path") {{ item.name }}
+              router-link.nav__link.ten-school-110(:to="item.path")
+                span {{ item.name }}
+                span {{ item.en }}
         .nav-toggle.ten-school-110.d-lg-none(@click="toggleNav")
           i.bx.bx-menu
     nuxt
@@ -76,7 +78,7 @@ export default {
     schoolNavItem() {
       return [
         ...map(
-          el => ({ path: el.path, name: el.name.split("-")[1] }),
+          el => ({ path: el.path, name: el.name.split("-")[1], en: el.en }),
           filter(el => !equals(el.onNav, false), schoolExhibition)
         )
       ];
@@ -87,6 +89,17 @@ export default {
 };
 </script>
 
+<style lang="scss" scoped>
+.ten-school-110 {
+  span {
+    text-align: center;
+    text-transform: capitalize;
+  }
+  span + span {
+    display: block;
+  }
+}
+</style>
 <style lang="scss">
 @import "@/assets/mixins/navbar.scss";
 @import "@/assets/mixins/footer.scss";

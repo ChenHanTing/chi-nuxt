@@ -1,14 +1,14 @@
 export const school = [
-  { key: 'mces', name: '臺北市松山區民族國民小學', abbr: '民族國小' },
-  { key: 'jaes', name: '臺北市大安區建安國民小學', abbr: '建安國小' },
-  { key: 'tyes', name: '臺北市萬華區東園國民小學', abbr: '東園國小' },
-  { key: 'wjhs', name: '臺北市立五常國民中學', abbr: '五常國中' },
-  { key: 'ktjg', name: '臺北市立古亭國民中學', abbr: '古亭國中' },
-  { key: 'blsh', name: '臺北市立百齡高級中學(國中部)', abbr: '百齡高中' },
-  { key: 'jjhs', name: '臺北市立金華國民中學', abbr: '金華國中' },
-  { key: 'zzsh', name: '臺北市立中正高級中學', abbr: '中正高中' },
-  { key: 'mlsh', name: '臺北市立明倫高級中學', abbr: '明倫高中' },
-  { key: 'fhsh', name: '臺北市立復興高級中學', abbr: '復興高中' },
+  { key: 'mces', name: '臺北市松山區民族國民小學', abbr: '民族國小', en: "Taipei Minzu Elementary School" },
+  { key: 'jaes', name: '臺北市大安區建安國民小學', abbr: '建安國小', en: "Taipei JianAn Elementary School" },
+  { key: 'tyes', name: '臺北市萬華區東園國民小學', abbr: '東園國小', en: "Taipei Dong Yuan Elementary School" },
+  { key: 'wjhs', name: '臺北市立五常國民中學', abbr: '五常國中', en: "Taipei Municipal Wuchang Junior High School" },
+  { key: 'ktjg', name: '臺北市立古亭國民中學', abbr: '古亭國中', en: "Taipei Municipal Guting Junior High School" },
+  { key: 'blsh', name: '臺北市立百齡高級中學(國中部)', abbr: '百齡高中', en: "Taipei Municipal BaiLing High School" },
+  { key: 'jjhs', name: '臺北市立金華國民中學', abbr: '金華國中', en: "Taipei Municipal Jinhua Junior High School" },
+  { key: 'zzsh', name: '臺北市立中正高級中學', abbr: '中正高中', en: "Taipei Municipal Zhong-zheng Senior High School" },
+  { key: 'mlsh', name: '臺北市立明倫高級中學', abbr: '明倫高中', en: "Taipei Municipal Ming Lun High School" },
+  { key: 'fhsh', name: '臺北市立復興高級中學', abbr: '復興高中', en: "Taipei Municipal Fuxing High School" },
 ]
 
 /**

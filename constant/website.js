@@ -61,26 +61,32 @@ export const schoolExhibitionOneTen = [
   {
     path: "/exhibitions/110",
     name: "十校連展-首頁",
+    en: "home"
   },
   {
     path: "/exhibitions/110/about",
     name: "十校連展-關於展覽",
+    en: "about"
   },
   {
     path: "/schools/110/:id",
     name: "十校連展-各校",
+    en: "schools",
     onNav: false
   },
   {
     path: "/schools/110/mces",
     name: "十校連展-各校作品",
+    en: "activles"
   },
   {
     path: "/exhibitions/110/introduction",
     name: "十校連展-展場介紹",
+    en: "introduction"
   },
   {
     path: "/exhibitions/110/activity",
     name: "十校連展-活動花絮",
+    en: "activity"
   },
 ]
