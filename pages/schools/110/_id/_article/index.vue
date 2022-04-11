@@ -73,9 +73,7 @@ export default {
        * Access to XMLHttpRequest at 'http://super-ninenine.synology.me/110/video/fhsh/4.mp4' from origin 'http://localhost:3000'
        * has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
        */
-
-      // return await this.checkImage(this.firstMp4) || await this.checkImage(this.secondMp4)
-      return true;
+      return !this.article.noVideo;
     }
   },
   methods: {
@@ -99,9 +97,6 @@ export default {
     },
     videoPath() {
       return this.firstMp4;
-      // return await this.checkImage(this.firstMp4) ? this.firstMp4 :
-      //        await this.checkImage(this.secondMp4) ? this.secondMp4 :
-      //        null
     },
     handler(e) {
       e.preventDefault();
@@ -114,6 +109,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@media only screen and (min-width: 992px) {
+  .swipe-image {
+    img {
+      width: 500px !important;
+    }
+  }
+}
+
 @import "@/assets/mixins/school.scss";
 @import "@/assets/mixins/school-article.scss";
 </style>
