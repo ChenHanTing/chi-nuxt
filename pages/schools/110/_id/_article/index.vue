@@ -112,7 +112,7 @@ export default {
 @media only screen and (min-width: 992px) {
   .swipe-image {
     img {
-      width: 500px !important;
+      height: 900px !important;
     }
   }
 }
