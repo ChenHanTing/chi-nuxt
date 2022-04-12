@@ -200,6 +200,16 @@ The `modules` array accepts a list of Nuxt.js modules such as dotenv, auth and i
 
 Now, you can access Axios from anywhere in your application by calling `this.$axios.method` or `this.$axios.$method`. Where *method* can be `get`, `post`, or `delete`.
 
+### http to https forward
+
+在ftp的根目錄創建`.htaccess`，並且寫入下述內容即可。
+
+````txt
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+````
+
 ### Nuxt routes
 
 ![](https://tva1.sinaimg.cn/large/e6c9d24egy1h0quk6u500j20im0653z9.jpg)
