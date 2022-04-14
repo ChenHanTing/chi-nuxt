@@ -4,20 +4,15 @@
     .title
       h1 展場介紹
     .article
-      h1 高中作品
+      h1 佈展照片
     .gallery
-      //figure(v-for="item in senior")
-      //  img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
+      figure(v-for="item in a")
+        img(:src="`${imageBaseOneTen}/${item.image}`" alt="預設文字")
     .article
-      h1 國中作品
+      //- h1 場佈照片
     .gallery
-      //figure(v-for="item in junior")
-      //  img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
-    .article
-      h1 國小作品
-    .gallery
-      //figure(v-for="item in elementory")
-      //  img(:src="`${imageBaseOneNine}/${item.image}`" alt="預設文字")
+      figure(v-for="item in b")
+        img(:src="`${imageBaseOneTen}/${item.image}`" alt="預設文字")
 </template>
 
 <script>
@@ -28,9 +23,8 @@ export default {
   mixins: [website],
   data() {
     return {
-      senior: [...Array(12).keys()].map(n => ({ image: `exhibition/senior/H${n+1}.JPG`, description: '展場圖片' })),
-      junior: [...Array(12).keys()].map(n => ({ image: `exhibition/junior/J${n+1}.JPG`, description: '展場圖片' })),
-      elementory: [...Array(12).keys()].map(n => ({ image: `exhibition/elementary/E${n+1}.JPG`, description: '展場圖片' }))
+      a: [...Array(18).keys()].map(n => ({ image: `exhibition/a/${n+1}.jpg`, description: '展場圖片' })),
+      b: [...Array(39).keys()].map(n => ({ image: `exhibition/b/${n+1}.jpg`, description: '展場圖片' })),
     }
   }
 };

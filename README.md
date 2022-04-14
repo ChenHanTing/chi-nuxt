@@ -216,6 +216,20 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 
 
+### 檔案改名
+
+````sh
+num=0; for i in *; do mv "$i" "$(printf '%04d' $num).${i#*.}"; ((num++)); done
+````
+
+將照片改成編號1~10.jpg
+
+````sh
+num=1; for i in *; do mv "$i" "$(printf '%d' $num).jpg"; ((num++)); done
+````
+
+
+
 ### 參考來源
 
 - [icon](https://www.flaticon.com/search?word=art&order_by=4&type=icon)

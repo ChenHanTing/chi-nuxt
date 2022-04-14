@@ -84,9 +84,4 @@ export const schoolExhibitionOneTen = [
     name: "十校連展-展場介紹",
     en: "introduction"
   },
-  {
-    path: "/exhibitions/110/activity",
-    name: "十校連展-活動花絮",
-    en: "activity"
-  },
 ]
