@@ -2,9 +2,7 @@
   main
     img.full-width(:src="`${imageBaseOneTen}/partial-banner.jpg`")
     .title
-      h1 展場介紹
-    .article
-      h1 佈展照片
+      h1 活動花絮
     .gallery
       figure(v-for="item in a")
         img(:src="`${imageBaseOneTen}/${item.image}`" alt="預設文字")
@@ -18,23 +16,27 @@ export default {
   mixins: [website],
   data() {
     return {
-      a: [ ...[...Array(15).keys()].map(n => ({ image: `exhibition/a/${n+1}.jpg`, description: '展場圖片' })),
-           ...[...Array(35).keys()].map(n => ({ image: `exhibition/b/${n+1}.jpg`, description: '展場圖片' }))]
+      a: [...Array(10).keys()].map(n => ({ image: `activity/photo/${n+1}.jpg`, description: '展場圖片' })),
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/mixins/full-image.scss";
-@import "@/assets/mixins/activity-and-introduction.scss";
-
-.article,
 .gallery {
-  margin: 0 10%;
+  video {
+    width: 90%;
+    height: auto;
+  }
 }
 
 .article {
-  padding-left: 2%;
+  span {
+    color: white;
+  }
 }
+
+
+@import "@/assets/mixins/full-image.scss";
+@import "@/assets/mixins/activity-and-introduction.scss";
 </style>

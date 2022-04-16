@@ -1,0 +1,21 @@
+.ten-school-110 {
+  span {
+    text-align: center;
+    font-size: .75rem;
+    text-transform: capitalize;
+  }
+  span + span {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1050px) {
+  .ten-school-110 {
+    span {
+      font-size: .8rem;
+    }
+    span + span {
+      display: none;
+    }
+  }
+}

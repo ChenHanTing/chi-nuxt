@@ -77,11 +77,21 @@ export const schoolExhibitionOneTen = [
   {
     path: "/schools/110/mces",
     name: "十校連展-各校作品",
-    en: "activles"
+    en: "articles"
   },
   {
     path: "/exhibitions/110/introduction",
     name: "十校連展-展場介紹",
     en: "introduction"
+  },
+  {
+    path: "/exhibitions/110/activity",
+    name: "十校連展-活動花絮",
+    en: "activity"
+  },
+  {
+    path: "/exhibitions/110/behind_the_scenes",
+    name: "十校連展-活動側錄",
+    en: "behind the scenes"
   },
 ]

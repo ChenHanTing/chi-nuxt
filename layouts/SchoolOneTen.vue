@@ -97,19 +97,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/mixins/110yNav.scss";
+
 .ten-school-110-bg {
   background: url("http://super-ninenine.synology.me/110/schools/bg-02.jpg");
   background-repeat: repeat;
 }
 
-.ten-school-110 {
-  span {
-    text-transform: capitalize;
-  }
-  span + span {
-    display: block;
-  }
-}
 </style>
 
 <style lang="scss">

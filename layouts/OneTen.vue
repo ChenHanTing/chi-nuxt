@@ -90,16 +90,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ten-school-110 {
-  span {
-    text-align: center;
-    text-transform: capitalize;
-  }
-  span + span {
-    display: block;
-  }
-}
+@import "@/assets/mixins/110yNav.scss";
 </style>
+
 <style lang="scss">
 @import "@/assets/mixins/navbar.scss";
 @import "@/assets/mixins/footer.scss";
