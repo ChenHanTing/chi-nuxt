@@ -23,8 +23,8 @@ export default {
   mixins: [website],
   data() {
     return {
-      a: [...Array(18).keys()].map(n => ({ image: `exhibition/a/${n+1}.jpg`, description: '展場圖片' })),
-      b: [...Array(39).keys()].map(n => ({ image: `exhibition/b/${n+1}.jpg`, description: '展場圖片' })),
+      a: [...Array(15).keys()].map(n => ({ image: `exhibition/a/${n+1}.jpg`, description: '展場圖片' })),
+      b: [...Array(32).keys()].map(n => ({ image: `exhibition/b/${n+1}.jpg`, description: '展場圖片' })),
     }
   }
 };
