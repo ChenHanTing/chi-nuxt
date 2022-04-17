@@ -7,7 +7,7 @@
       video.video(v-for="item in b" controls)
         source(:src="`${imageBaseOneTen}/${item.image}`" type="video/mp4")
     .article
-      span 有沒有學生想要留悄悄話在這裡，可以來信k445566778899k@gmail.com
+      span
 </template>
 
 <script>

@@ -16,7 +16,7 @@ export default {
   mixins: [website],
   data() {
     return {
-      a: [...Array(10).keys()].map(n => ({ image: `activity/photo/${n+1}.jpg`, description: '展場圖片' })),
+      a: [...Array(15).keys()].map(n => ({ image: `activity/photo/${n+1}.jpg`, description: '展場圖片' })),
     }
   }
 };

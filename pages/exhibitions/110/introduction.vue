@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       a: [ ...[...Array(15).keys()].map(n => ({ image: `exhibition/a/${n+1}.jpg`, description: '展場圖片' })),
-           ...[...Array(35).keys()].map(n => ({ image: `exhibition/b/${n+1}.jpg`, description: '展場圖片' }))]
+           ...[...Array(30).keys()].map(n => ({ image: `exhibition/b/${n+1}.jpg`, description: '展場圖片' }))]
     }
   }
 };
