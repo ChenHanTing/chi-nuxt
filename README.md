@@ -1,8 +1,10 @@
-# Dad Jokes
+# 十校聯展 110/111
 
-> Nuxt.js app that ists corny dad jokes. Uses the [icanhazdadjoke.com API](https://icanhazdadjoke.com/api)
+十校聯展所使用的技術
 
 ## Build Setup
+
+安裝、啟用本地、產出輸出檔
 
 ```bash
 # install dependencies
@@ -23,11 +25,7 @@ $ npm run generate
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
 
-## 技術債
-
-在2021年欠的技術債，於2022年整合完的同時順便還一還
-
-### Layout 切分含糊
+## 技術債 - Layout 切分含糊
 
 各校作品的顏色消失的原因在於Layout的結構太複雜了，因此在這裡先必要的切分Layout
 
